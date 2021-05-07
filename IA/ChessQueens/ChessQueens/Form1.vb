@@ -5,9 +5,7 @@
     Dim soluciones As New List(Of List(Of Integer))
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        For x = 0 To numeroDeReinas
-            solucionActual.Add(0)
-        Next
+
     End Sub
 
     ''' <summary>
@@ -63,6 +61,12 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         numeroDeReinas = Convert.ToInt32(TextBox1.Text)
+
+        For x = 0 To numeroDeReinas
+            solucionActual.Add(0)
+        Next
+
+        ListBox1.Items.Add(Str(solucionActual.Count))
         ColocarReina(0)
         ListBox1.Items.Add("Resultados para " + Str(numeroDeReinas) + " Reinas:")
         ListBox1.Items.Add(Str(soluciones.Count) + " soluciones encontradas")
