@@ -1,7 +1,9 @@
 ﻿Public Class Form1
     'Cantidad de reinas
     Dim numeroDeReinas As Integer
+    'Lista que contendra el valor de prueba actual
     Dim solucionActual As New List(Of Integer)
+    'Lista de listas de soluciones encontradas
     Dim soluciones As New List(Of List(Of Integer))
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -50,7 +52,7 @@
                 'Si es la ultima fila agregamos una copia de la lista de soluciones
                 'actuales a la lista de soluciones
                 If fila = numeroDeReinas - 1 Then
-                    soluciones.AddRange(solucionActual)
+                    soluciones.Add(solucionActual)
                 Else
                     'Si no estamos en la ultima fila, seguimos la recursividad.
                     ColocarReina(fila + 1)
