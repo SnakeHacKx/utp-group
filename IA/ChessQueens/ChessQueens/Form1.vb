@@ -43,10 +43,9 @@
     ''' </summary>
     ''' <param name="fila">Fila actual.</param>
     Private Sub ColocarReina(fila As Integer)
-        'Dim temp As New  List(Of Integer)()
-        For columna = 0 To numeroDeReinas - 1
+        Dim temp As New List(Of Integer)
 
-            'ListBox1.Items.Add(columna)
+        For columna = 0 To numeroDeReinas - 1
             If Not PosicionEsSegura(fila, columna) Then
                 Continue For
             Else
@@ -55,21 +54,11 @@
                 'Si es la ultima fila agregamos una copia de la lista de soluciones
                 'actuales a la lista de soluciones
                 If fila = (numeroDeReinas - 1) Then
-                    'temp = solucionActual
-                    soluciones.Add(solucionActual)
-                    'solucionActual = New List(Of Integer)
-                    'solucionActual = temp
-                    Dim a As String = ""
                     For x = 0 To numeroDeReinas - 1
-                        a &= " " & soluciones(soluciones.Count - 1).Item(x).ToString
+                        temp.Add(Val(solucionActual.Item(x)))
                     Next
-                    ListBox1.Items.Add("Solucion # " + Str(soluciones.Count) + ": " + a)
-                    'ListBox1.Items.Add(a)
+                    soluciones.Add(temp)
 
-                    'For Each solu In solucionActual
-                    '    TextBox2.Text &= Str(solu)
-                    'Next
-                    'TextBox2.Text &= vbNewLine
                 Else
                     'Si no estamos en la ultima fila, seguimos la recursividad.
                     ColocarReina(fila + 1)
@@ -88,31 +77,13 @@
         ColocarReina(0)
         ListBox1.Items.Add("Resultados para " + Str(numeroDeReinas) + " Reinas:")
         ListBox1.Items.Add(Str(soluciones.Count) + " soluciones encontradas")
+        For i = 0 To soluciones.Count - 1
+            Dim a As String = ""
+            For x = 0 To numeroDeReinas - 1
+                a &= " " & soluciones(i).Item(x).ToString
+            Next
+            ListBox1.Items.Add(a)
+        Next
 
-        'Dim aux As String = ""
-
-        'For Each solucion In soluciones
-        '    For Each sol In solucion
-        '        aux += Str(sol)
-        '    Next
-        '    ListBox1.Items.Add(aux)
-        '    aux = ""
-        'Next
-
-        'For Each solucion In soluciones
-        '    For Each sol In solucion
-        '        TextBox2.Text &= Str(sol)
-        '    Next
-        '    TextBox2.Text &= vbNewLine
-        'Next
-
-        'For i = 0 To soluciones.Count - 1
-        '    Dim a As String = ""
-        '    For x = 0 To numeroDeReinas - 1
-        '        a &= " " & soluciones(i).Item(x).ToString
-        '    Next
-        '    ListBox1.Items.Add(a)
-
-        'Next
     End Sub
 End Class
