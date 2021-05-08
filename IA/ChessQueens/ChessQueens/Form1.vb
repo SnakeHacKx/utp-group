@@ -15,13 +15,13 @@
     ''' </summary>
     ''' <param name="filaDePrueba">Fila a probar.</param>
     ''' <param name="columnaDePrueba">Columna a probar.</param>
-    ''' <returns>True si es segura. | False si no es segura.</returns>
+    ''' <returns>True: es segura. | False: no es segura.</returns>
     Private Function PosicionEsSegura(filaDePrueba As Integer, columnaDePrueba As Integer) As Boolean
         If filaDePrueba = 0 Then
             Return True
         End If
 
-        For fila = 0 To filaDePrueba
+        For fila = 0 To filaDePrueba - 1
             ' Verifica en vertical
             If columnaDePrueba = solucionActual(fila) Then
                 Return False
@@ -44,7 +44,9 @@
     ''' <param name="fila">Fila actual.</param>
     Private Sub ColocarReina(fila As Integer)
         'Dim temp As New  List(Of Integer)()
-        For columna = 0 To numeroDeReinas
+        For columna = 0 To numeroDeReinas - 1
+
+            'ListBox1.Items.Add(columna)
             If Not PosicionEsSegura(fila, columna) Then
                 Continue For
             Else
@@ -52,7 +54,7 @@
 
                 'Si es la ultima fila agregamos una copia de la lista de soluciones
                 'actuales a la lista de soluciones
-                If fila = numeroDeReinas - 1 Then
+                If fila = (numeroDeReinas - 1) Then
                     'temp = solucionActual
                     soluciones.Add(solucionActual)
                     'solucionActual = New List(Of Integer)
@@ -61,7 +63,13 @@
                     For x = 0 To numeroDeReinas - 1
                         a &= " " & soluciones(soluciones.Count - 1).Item(x).ToString
                     Next
-                    ListBox1.Items.Add(a)
+                    ListBox1.Items.Add("Solucion # " + Str(soluciones.Count) + ": " + a)
+                    'ListBox1.Items.Add(a)
+
+                    'For Each solu In solucionActual
+                    '    TextBox2.Text &= Str(solu)
+                    'Next
+                    'TextBox2.Text &= vbNewLine
                 Else
                     'Si no estamos en la ultima fila, seguimos la recursividad.
                     ColocarReina(fila + 1)
@@ -73,14 +81,31 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         numeroDeReinas = Convert.ToInt32(TextBox1.Text)
 
-        For x = 0 To numeroDeReinas - 1
+        For x = 0 To numeroDeReinas
             solucionActual.Add(0)
         Next
 
-        ListBox1.Items.Add(Str(solucionActual.Count))
         ColocarReina(0)
         ListBox1.Items.Add("Resultados para " + Str(numeroDeReinas) + " Reinas:")
         ListBox1.Items.Add(Str(soluciones.Count) + " soluciones encontradas")
+
+        'Dim aux As String = ""
+
+        'For Each solucion In soluciones
+        '    For Each sol In solucion
+        '        aux += Str(sol)
+        '    Next
+        '    ListBox1.Items.Add(aux)
+        '    aux = ""
+        'Next
+
+        'For Each solucion In soluciones
+        '    For Each sol In solucion
+        '        TextBox2.Text &= Str(sol)
+        '    Next
+        '    TextBox2.Text &= vbNewLine
+        'Next
+
         'For i = 0 To soluciones.Count - 1
         '    Dim a As String = ""
         '    For x = 0 To numeroDeReinas - 1
