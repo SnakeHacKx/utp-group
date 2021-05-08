@@ -40,9 +40,9 @@ Partial Class Form1
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(375, 12)
+        Me.ListBox1.Location = New System.Drawing.Point(378, 12)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(314, 784)
+        Me.ListBox1.Size = New System.Drawing.Size(314, 719)
         Me.ListBox1.TabIndex = 1
         '
         'TextBox1
@@ -64,8 +64,12 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+<<<<<<< HEAD
         Me.ClientSize = New System.Drawing.Size(1145, 804)
         Me.Controls.Add(Me.TextBox2)
+=======
+        Me.ClientSize = New System.Drawing.Size(1145, 749)
+>>>>>>> 016c2e83abab1599abc237b4bc61817d16f82c12
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Button1)
