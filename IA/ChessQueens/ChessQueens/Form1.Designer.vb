@@ -25,6 +25,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button1
@@ -51,11 +52,20 @@ Partial Class Form1
         Me.TextBox1.Size = New System.Drawing.Size(211, 20)
         Me.TextBox1.TabIndex = 2
         '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(753, 12)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(338, 780)
+        Me.TextBox2.TabIndex = 3
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1145, 804)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Button1)
@@ -69,4 +79,5 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class
