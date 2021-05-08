@@ -48,7 +48,8 @@
     ''' </summary>
     ''' <param name="fila">Fila actual.</param>
     Public Sub ColocarReina(fila As Integer)
-        'Dim temp As New  List(Of Integer)()
+        Dim temp As New List(Of Integer)
+
         For columna = 0 To NumeroDeReinas - 1
             If Not PosicionEsSegura(fila, columna) Then
                 Continue For
@@ -58,22 +59,11 @@
                 'Si es la ultima fila agregamos una copia de la lista de soluciones
                 'actuales a la lista de soluciones
                 If fila = (NumeroDeReinas - 1) Then
-                    'temp = solucionActual
-                    soluciones.Add(solucionActual)
-
-                    'solucionActual = New List(Of Integer)
-                    'solucionActual = temp
-                    Dim a As String = ""
                     For x = 0 To NumeroDeReinas - 1
-                        a &= " " & soluciones(soluciones.Count - 1).Item(x).ToString
+                        temp.Add(Val(solucionActual.Item(x)))
                     Next
-                    'ListBox1.Items.Add("Solucion # " + Str(soluciones.Count) + ": " + a)
-                    'ListBox1.Items.Add(a)
+                    soluciones.Add(temp)
 
-                    'For Each solu In solucionActual
-                    '    TextBox2.Text &= Str(solu)
-                    'Next
-                    'TextBox2.Text &= vbNewLine
                 Else
                     'Si no estamos en la ultima fila, seguimos la recursividad.
                     ColocarReina(fila + 1)
