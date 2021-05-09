@@ -5,6 +5,26 @@
         For i As Integer = 0 To 7
             Dgv_tablero.Rows.Add()
             Dgv_tablero.Rows(i).HeaderCell.Value = (i + 1).ToString
+            Dgv_tablero.Rows(i).Height = 75
+            If i Mod 2 Then
+                For j As Integer = 0 To 7
+                    If j Mod 2 Then
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.SkyBlue
+                    Else
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.Purple
+                    End If
+                Next
+            Else
+                For j As Integer = 0 To 7
+                    If j Mod 2 Then
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.Purple
+                    Else
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.SkyBlue
+                    End If
+                Next
+            End If
+
+
         Next
     End Sub
 

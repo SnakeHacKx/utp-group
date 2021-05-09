@@ -71,7 +71,8 @@ Partial Class Form1
         Me.Dgv_tablero.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
         Me.Dgv_tablero.Location = New System.Drawing.Point(295, 80)
         Me.Dgv_tablero.Name = "Dgv_tablero"
-        Me.Dgv_tablero.Size = New System.Drawing.Size(838, 517)
+        Me.Dgv_tablero.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.Dgv_tablero.Size = New System.Drawing.Size(839, 623)
         Me.Dgv_tablero.TabIndex = 3
         '
         'Column1
