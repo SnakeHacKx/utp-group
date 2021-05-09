@@ -23,17 +23,19 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LbResultados = New System.Windows.Forms.ListBox()
         Me.Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.PanFichasPJ1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox5 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.PanFichasPJ2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox9 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox8 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox7 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -54,8 +56,6 @@ Partial Class Form1
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.PanFichasPJ1.SuspendLayout()
         CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +98,8 @@ Partial Class Form1
         '
         'PanFichasPJ1
         '
+        Me.PanFichasPJ1.BorderColor = System.Drawing.Color.Black
+        Me.PanFichasPJ1.BorderRadius = 20
         Me.PanFichasPJ1.Controls.Add(Me.Guna2HtmlLabel4)
         Me.PanFichasPJ1.Controls.Add(Me.Guna2PictureBox5)
         Me.PanFichasPJ1.Controls.Add(Me.Guna2PictureBox4)
@@ -109,6 +111,17 @@ Partial Class Form1
         Me.PanFichasPJ1.ShadowDecoration.Parent = Me.PanFichasPJ1
         Me.PanFichasPJ1.Size = New System.Drawing.Size(201, 623)
         Me.PanFichasPJ1.TabIndex = 7
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(25, 3)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(132, 41)
+        Me.Guna2HtmlLabel4.TabIndex = 19
+        Me.Guna2HtmlLabel4.Text = "Jugador(a)"
         '
         'Guna2PictureBox5
         '
@@ -164,6 +177,7 @@ Partial Class Form1
         '
         'PanFichasPJ2
         '
+        Me.PanFichasPJ2.BorderRadius = 20
         Me.PanFichasPJ2.Controls.Add(Me.Guna2HtmlLabel5)
         Me.PanFichasPJ2.Controls.Add(Me.Guna2PictureBox9)
         Me.PanFichasPJ2.Controls.Add(Me.Guna2PictureBox8)
@@ -177,6 +191,17 @@ Partial Class Form1
         Me.PanFichasPJ2.ShadowDecoration.Parent = Me.PanFichasPJ2
         Me.PanFichasPJ2.Size = New System.Drawing.Size(201, 623)
         Me.PanFichasPJ2.TabIndex = 8
+        '
+        'Guna2HtmlLabel5
+        '
+        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(85, 6)
+        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(37, 41)
+        Me.Guna2HtmlLabel5.TabIndex = 20
+        Me.Guna2HtmlLabel5.Text = "IA"
         '
         'Guna2PictureBox9
         '
@@ -249,6 +274,7 @@ Partial Class Form1
         Me.NudCantidadReinas.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NudCantidadReinas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.NudCantidadReinas.Location = New System.Drawing.Point(10, 61)
+        Me.NudCantidadReinas.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.NudCantidadReinas.Name = "NudCantidadReinas"
         Me.NudCantidadReinas.ShadowDecoration.Parent = Me.NudCantidadReinas
         Me.NudCantidadReinas.Size = New System.Drawing.Size(58, 36)
@@ -317,31 +343,31 @@ Partial Class Form1
         'Dgv_tablero
         '
         Me.Dgv_tablero.AllowUserToDeleteRows = False
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
-        Me.Dgv_tablero.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.Dgv_tablero.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_tablero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Dgv_tablero.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_tablero.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgv_tablero.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgv_tablero.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_tablero.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_tablero.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Dgv_tablero.ColumnHeadersHeight = 21
         Me.Dgv_tablero.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16})
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle3
         Me.Dgv_tablero.EnableHeadersVisualStyles = False
         Me.Dgv_tablero.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Dgv_tablero.Location = New System.Drawing.Point(249, 141)
@@ -432,28 +458,6 @@ Partial Class Form1
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(587, 81)
         Me.Guna2HtmlLabel3.TabIndex = 18
         Me.Guna2HtmlLabel3.Text = "El Juego de Las N Reinas"
-        '
-        'Guna2HtmlLabel4
-        '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(25, 3)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(132, 41)
-        Me.Guna2HtmlLabel4.TabIndex = 19
-        Me.Guna2HtmlLabel4.Text = "Jugador(a)"
-        '
-        'Guna2HtmlLabel5
-        '
-        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(85, 6)
-        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
-        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(37, 41)
-        Me.Guna2HtmlLabel5.TabIndex = 20
-        Me.Guna2HtmlLabel5.Text = "IA"
         '
         'Form1
         '
