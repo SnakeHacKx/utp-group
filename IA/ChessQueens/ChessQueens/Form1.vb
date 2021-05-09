@@ -9,42 +9,51 @@
             If i Mod 2 Then
                 For j As Integer = 0 To 7
                     If j Mod 2 Then
-                        Dgv_tablero.Item(j, i).Style.BackColor = Color.SkyBlue
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(223, 229, 229)
                     Else
-                        Dgv_tablero.Item(j, i).Style.BackColor = Color.Purple
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(57, 57, 57)
                     End If
                 Next
             Else
                 For j As Integer = 0 To 7
                     If j Mod 2 Then
-                        Dgv_tablero.Item(j, i).Style.BackColor = Color.Purple
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(57, 57, 57)
                     Else
-                        Dgv_tablero.Item(j, i).Style.BackColor = Color.SkyBlue
+                        Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(223, 229, 229)
                     End If
                 Next
             End If
-
-
         Next
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        queens.NumeroDeReinas = Convert.ToInt32(TextBox1.Text)
+    Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
+        queens.NumeroDeReinas = Convert.ToInt32(NudCantidadReinas.Text)
 
         For x = 0 To queens.NumeroDeReinas
             queens.solucionActual.Add(0)
         Next
 
         queens.ColocarReina(0)
-        ListBox1.Items.Add("Resultados para " + Str(queens.NumeroDeReinas) + " Reinas:")
-        ListBox1.Items.Add(Str(queens.soluciones.Count) + " soluciones encontradas")
+        LbResultados.Items.Add("Resultados para " + Str(queens.NumeroDeReinas) + " Reinas:")
+        LbResultados.Items.Add(Str(queens.soluciones.Count) + " soluciones encontradas")
         For i = 0 To queens.soluciones.Count - 1
             Dim a As String = ""
             For x = 0 To queens.NumeroDeReinas - 1
                 a &= " " & queens.soluciones(i).Item(x).ToString
             Next
-            ListBox1.Items.Add(a)
+            LbResultados.Items.Add(a)
         Next
+    End Sub
+
+    Private Sub Guna2PictureBox10_Click(sender As Object, e As EventArgs)
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton1.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub Guna2ImageButton2_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton2.Click
 
     End Sub
 End Class

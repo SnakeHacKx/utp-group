@@ -22,126 +22,507 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Dgv_tablero = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.LbResultados = New System.Windows.Forms.ListBox()
+        Me.Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
+        Me.PanFichasPJ1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox5 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.PanFichasPJ2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox9 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox8 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox7 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox6 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
+        Me.NudCantidadReinas = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2ImageButton2 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Dgv_tablero = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.PanFichasPJ1.SuspendLayout()
+        CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanFichasPJ2.SuspendLayout()
+        CType(Me.Guna2PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NudCantidadReinas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_tablero, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'LbResultados
         '
-        Me.Button1.Location = New System.Drawing.Point(78, 168)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 90)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.LbResultados.FormattingEnabled = True
+        Me.LbResultados.Location = New System.Drawing.Point(0, 505)
+        Me.LbResultados.Name = "LbResultados"
+        Me.LbResultados.Size = New System.Drawing.Size(213, 121)
+        Me.LbResultados.TabIndex = 1
         '
-        'ListBox1
+        'Guna2GradientButton1
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(78, 264)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(211, 355)
-        Me.ListBox1.TabIndex = 1
+        Me.Guna2GradientButton1.AutoRoundedCorners = True
+        Me.Guna2GradientButton1.BorderRadius = 25
+        Me.Guna2GradientButton1.CheckedState.Parent = Me.Guna2GradientButton1
+        Me.Guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2GradientButton1.CustomImages.Parent = Me.Guna2GradientButton1
+        Me.Guna2GradientButton1.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GradientButton1.ForeColor = System.Drawing.Color.White
+        Me.Guna2GradientButton1.HoverState.Parent = Me.Guna2GradientButton1
+        Me.Guna2GradientButton1.Location = New System.Drawing.Point(141, 50)
+        Me.Guna2GradientButton1.Name = "Guna2GradientButton1"
+        Me.Guna2GradientButton1.ShadowDecoration.BorderRadius = 16
+        Me.Guna2GradientButton1.ShadowDecoration.Parent = Me.Guna2GradientButton1
+        Me.Guna2GradientButton1.Size = New System.Drawing.Size(139, 52)
+        Me.Guna2GradientButton1.TabIndex = 6
+        Me.Guna2GradientButton1.Text = "Iniciar"
         '
-        'TextBox1
+        'PanFichasPJ1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(78, 80)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(211, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.PanFichasPJ1.Controls.Add(Me.Guna2HtmlLabel4)
+        Me.PanFichasPJ1.Controls.Add(Me.Guna2PictureBox5)
+        Me.PanFichasPJ1.Controls.Add(Me.Guna2PictureBox4)
+        Me.PanFichasPJ1.Controls.Add(Me.Guna2PictureBox3)
+        Me.PanFichasPJ1.Controls.Add(Me.Guna2PictureBox2)
+        Me.PanFichasPJ1.FillColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.PanFichasPJ1.Location = New System.Drawing.Point(12, 141)
+        Me.PanFichasPJ1.Name = "PanFichasPJ1"
+        Me.PanFichasPJ1.ShadowDecoration.Parent = Me.PanFichasPJ1
+        Me.PanFichasPJ1.Size = New System.Drawing.Size(201, 623)
+        Me.PanFichasPJ1.TabIndex = 7
+        '
+        'Guna2PictureBox5
+        '
+        Me.Guna2PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox5.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox5.Location = New System.Drawing.Point(109, 199)
+        Me.Guna2PictureBox5.Name = "Guna2PictureBox5"
+        Me.Guna2PictureBox5.ShadowDecoration.Parent = Me.Guna2PictureBox5
+        Me.Guna2PictureBox5.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox5.TabIndex = 3
+        Me.Guna2PictureBox5.TabStop = False
+        Me.Guna2PictureBox5.UseTransparentBackground = True
+        '
+        'Guna2PictureBox4
+        '
+        Me.Guna2PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox4.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox4.Location = New System.Drawing.Point(13, 199)
+        Me.Guna2PictureBox4.Name = "Guna2PictureBox4"
+        Me.Guna2PictureBox4.ShadowDecoration.Parent = Me.Guna2PictureBox4
+        Me.Guna2PictureBox4.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox4.TabIndex = 2
+        Me.Guna2PictureBox4.TabStop = False
+        Me.Guna2PictureBox4.UseTransparentBackground = True
+        '
+        'Guna2PictureBox3
+        '
+        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(109, 58)
+        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
+        Me.Guna2PictureBox3.ShadowDecoration.Parent = Me.Guna2PictureBox3
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox3.TabIndex = 1
+        Me.Guna2PictureBox3.TabStop = False
+        Me.Guna2PictureBox3.UseTransparentBackground = True
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox2.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(13, 58)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.ShadowDecoration.Parent = Me.Guna2PictureBox2
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox2.TabIndex = 0
+        Me.Guna2PictureBox2.TabStop = False
+        Me.Guna2PictureBox2.UseTransparentBackground = True
+        '
+        'PanFichasPJ2
+        '
+        Me.PanFichasPJ2.Controls.Add(Me.Guna2HtmlLabel5)
+        Me.PanFichasPJ2.Controls.Add(Me.Guna2PictureBox9)
+        Me.PanFichasPJ2.Controls.Add(Me.Guna2PictureBox8)
+        Me.PanFichasPJ2.Controls.Add(Me.Guna2PictureBox7)
+        Me.PanFichasPJ2.Controls.Add(Me.LbResultados)
+        Me.PanFichasPJ2.Controls.Add(Me.Guna2PictureBox6)
+        Me.PanFichasPJ2.FillColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.PanFichasPJ2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanFichasPJ2.Location = New System.Drawing.Point(1090, 138)
+        Me.PanFichasPJ2.Name = "PanFichasPJ2"
+        Me.PanFichasPJ2.ShadowDecoration.Parent = Me.PanFichasPJ2
+        Me.PanFichasPJ2.Size = New System.Drawing.Size(201, 623)
+        Me.PanFichasPJ2.TabIndex = 8
+        '
+        'Guna2PictureBox9
+        '
+        Me.Guna2PictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox9.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox9.Location = New System.Drawing.Point(14, 202)
+        Me.Guna2PictureBox9.Name = "Guna2PictureBox9"
+        Me.Guna2PictureBox9.ShadowDecoration.Parent = Me.Guna2PictureBox9
+        Me.Guna2PictureBox9.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox9.TabIndex = 6
+        Me.Guna2PictureBox9.TabStop = False
+        Me.Guna2PictureBox9.UseTransparentBackground = True
+        '
+        'Guna2PictureBox8
+        '
+        Me.Guna2PictureBox8.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox8.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox8.Location = New System.Drawing.Point(117, 202)
+        Me.Guna2PictureBox8.Name = "Guna2PictureBox8"
+        Me.Guna2PictureBox8.ShadowDecoration.Parent = Me.Guna2PictureBox8
+        Me.Guna2PictureBox8.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox8.TabIndex = 5
+        Me.Guna2PictureBox8.TabStop = False
+        Me.Guna2PictureBox8.UseTransparentBackground = True
+        '
+        'Guna2PictureBox7
+        '
+        Me.Guna2PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox7.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox7.Location = New System.Drawing.Point(125, 61)
+        Me.Guna2PictureBox7.Name = "Guna2PictureBox7"
+        Me.Guna2PictureBox7.ShadowDecoration.Parent = Me.Guna2PictureBox7
+        Me.Guna2PictureBox7.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox7.TabIndex = 5
+        Me.Guna2PictureBox7.TabStop = False
+        Me.Guna2PictureBox7.UseTransparentBackground = True
+        '
+        'Guna2PictureBox6
+        '
+        Me.Guna2PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox6.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox6.Location = New System.Drawing.Point(14, 61)
+        Me.Guna2PictureBox6.Name = "Guna2PictureBox6"
+        Me.Guna2PictureBox6.ShadowDecoration.Parent = Me.Guna2PictureBox6
+        Me.Guna2PictureBox6.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox6.TabIndex = 4
+        Me.Guna2PictureBox6.TabStop = False
+        Me.Guna2PictureBox6.UseTransparentBackground = True
+        '
+        'Guna2BorderlessForm1
+        '
+        Me.Guna2BorderlessForm1.ContainerControl = Me
+        '
+        'NudCantidadReinas
+        '
+        Me.NudCantidadReinas.BackColor = System.Drawing.Color.Transparent
+        Me.NudCantidadReinas.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.NudCantidadReinas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.NudCantidadReinas.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.NudCantidadReinas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.NudCantidadReinas.DisabledState.Parent = Me.NudCantidadReinas
+        Me.NudCantidadReinas.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.NudCantidadReinas.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.NudCantidadReinas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.NudCantidadReinas.FocusedState.Parent = Me.NudCantidadReinas
+        Me.NudCantidadReinas.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NudCantidadReinas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.NudCantidadReinas.Location = New System.Drawing.Point(10, 61)
+        Me.NudCantidadReinas.Name = "NudCantidadReinas"
+        Me.NudCantidadReinas.ShadowDecoration.Parent = Me.NudCantidadReinas
+        Me.NudCantidadReinas.Size = New System.Drawing.Size(58, 36)
+        Me.NudCantidadReinas.TabIndex = 11
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(10, 31)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(77, 23)
+        Me.Guna2HtmlLabel1.TabIndex = 13
+        Me.Guna2HtmlLabel1.Text = "Jugar con:"
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(74, 65)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(50, 23)
+        Me.Guna2HtmlLabel2.TabIndex = 14
+        Me.Guna2HtmlLabel2.Text = "Reinas"
+        '
+        'Guna2ImageButton1
+        '
+        Me.Guna2ImageButton1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ImageButton1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton1.CheckedState.Parent = Me.Guna2ImageButton1
+        Me.Guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ImageButton1.HoverState.ImageSize = New System.Drawing.Size(37, 37)
+        Me.Guna2ImageButton1.HoverState.Parent = Me.Guna2ImageButton1
+        Me.Guna2ImageButton1.Image = Global.ChessQueens.My.Resources.Resources.cancel
+        Me.Guna2ImageButton1.ImageRotate = 0!
+        Me.Guna2ImageButton1.ImageSize = New System.Drawing.Size(32, 32)
+        Me.Guna2ImageButton1.Location = New System.Drawing.Point(1256, -1)
+        Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
+        Me.Guna2ImageButton1.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton1.PressedState.Parent = Me.Guna2ImageButton1
+        Me.Guna2ImageButton1.Size = New System.Drawing.Size(47, 45)
+        Me.Guna2ImageButton1.TabIndex = 15
+        Me.Guna2ImageButton1.UseTransparentBackground = True
+        '
+        'Guna2ImageButton2
+        '
+        Me.Guna2ImageButton2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ImageButton2.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton2.CheckedState.Parent = Me.Guna2ImageButton2
+        Me.Guna2ImageButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ImageButton2.HoverState.ImageSize = New System.Drawing.Size(37, 37)
+        Me.Guna2ImageButton2.HoverState.Parent = Me.Guna2ImageButton2
+        Me.Guna2ImageButton2.Image = Global.ChessQueens.My.Resources.Resources.minimize
+        Me.Guna2ImageButton2.ImageRotate = 0!
+        Me.Guna2ImageButton2.ImageSize = New System.Drawing.Size(32, 32)
+        Me.Guna2ImageButton2.Location = New System.Drawing.Point(1207, -1)
+        Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
+        Me.Guna2ImageButton2.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton2.PressedState.Parent = Me.Guna2ImageButton2
+        Me.Guna2ImageButton2.Size = New System.Drawing.Size(47, 45)
+        Me.Guna2ImageButton2.TabIndex = 16
+        Me.Guna2ImageButton2.UseTransparentBackground = True
         '
         'Dgv_tablero
         '
-        Me.Dgv_tablero.AllowUserToAddRows = False
         Me.Dgv_tablero.AllowUserToDeleteRows = False
-        Me.Dgv_tablero.AllowUserToResizeColumns = False
-        Me.Dgv_tablero.AllowUserToResizeRows = False
-        Me.Dgv_tablero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_tablero.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8})
-        Me.Dgv_tablero.Location = New System.Drawing.Point(295, 80)
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        Me.Dgv_tablero.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        Me.Dgv_tablero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.Dgv_tablero.BackgroundColor = System.Drawing.Color.White
+        Me.Dgv_tablero.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Dgv_tablero.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.Dgv_tablero.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_tablero.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
+        Me.Dgv_tablero.ColumnHeadersHeight = 21
+        Me.Dgv_tablero.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16})
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle18
+        Me.Dgv_tablero.EnableHeadersVisualStyles = False
+        Me.Dgv_tablero.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Dgv_tablero.Location = New System.Drawing.Point(249, 141)
         Me.Dgv_tablero.Name = "Dgv_tablero"
-        Me.Dgv_tablero.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.Dgv_tablero.Size = New System.Drawing.Size(839, 623)
-        Me.Dgv_tablero.TabIndex = 3
+        Me.Dgv_tablero.ReadOnly = True
+        Me.Dgv_tablero.RowHeadersVisible = False
+        Me.Dgv_tablero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgv_tablero.Size = New System.Drawing.Size(806, 620)
+        Me.Dgv_tablero.TabIndex = 17
+        Me.Dgv_tablero.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
+        Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.Dgv_tablero.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.Dgv_tablero.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Dgv_tablero.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Dgv_tablero.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.Dgv_tablero.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.Dgv_tablero.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.Dgv_tablero.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.Dgv_tablero.ThemeStyle.HeaderStyle.Height = 21
+        Me.Dgv_tablero.ThemeStyle.ReadOnly = True
+        Me.Dgv_tablero.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.Dgv_tablero.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.Dgv_tablero.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.Dgv_tablero.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Dgv_tablero.ThemeStyle.RowsStyle.Height = 22
+        Me.Dgv_tablero.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Dgv_tablero.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Column1
+        'Column9
         '
-        Me.Column1.HeaderText = "1"
-        Me.Column1.Name = "Column1"
+        Me.Column9.HeaderText = "1"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
         '
-        'Column2
+        'Column10
         '
-        Me.Column2.HeaderText = "2"
-        Me.Column2.Name = "Column2"
+        Me.Column10.HeaderText = "2"
+        Me.Column10.Name = "Column10"
+        Me.Column10.ReadOnly = True
         '
-        'Column3
+        'Column11
         '
-        Me.Column3.HeaderText = "3"
-        Me.Column3.Name = "Column3"
+        Me.Column11.HeaderText = "3"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
         '
-        'Column4
+        'Column12
         '
-        Me.Column4.HeaderText = "4"
-        Me.Column4.Name = "Column4"
+        Me.Column12.HeaderText = "4"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
         '
-        'Column5
+        'Column13
         '
-        Me.Column5.HeaderText = "5"
-        Me.Column5.Name = "Column5"
+        Me.Column13.HeaderText = "5"
+        Me.Column13.Name = "Column13"
+        Me.Column13.ReadOnly = True
         '
-        'Column6
+        'Column14
         '
-        Me.Column6.HeaderText = "6"
-        Me.Column6.Name = "Column6"
+        Me.Column14.HeaderText = "6"
+        Me.Column14.Name = "Column14"
+        Me.Column14.ReadOnly = True
         '
-        'Column7
+        'Column15
         '
-        Me.Column7.HeaderText = "7"
-        Me.Column7.Name = "Column7"
+        Me.Column15.HeaderText = "7"
+        Me.Column15.Name = "Column15"
+        Me.Column15.ReadOnly = True
         '
-        'Column8
+        'Column16
         '
-        Me.Column8.HeaderText = "8"
-        Me.Column8.Name = "Column8"
+        Me.Column16.HeaderText = "8"
+        Me.Column16.Name = "Column16"
+        Me.Column16.ReadOnly = True
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Monotype Corsiva", 48.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(358, 21)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(587, 81)
+        Me.Guna2HtmlLabel3.TabIndex = 18
+        Me.Guna2HtmlLabel3.Text = "El Juego de Las N Reinas"
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(25, 3)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(132, 41)
+        Me.Guna2HtmlLabel4.TabIndex = 19
+        Me.Guna2HtmlLabel4.Text = "Jugador(a)"
+        '
+        'Guna2HtmlLabel5
+        '
+        Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(85, 6)
+        Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
+        Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(37, 41)
+        Me.Guna2HtmlLabel5.TabIndex = 20
+        Me.Guna2HtmlLabel5.Text = "IA"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1145, 749)
+        Me.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.ClientSize = New System.Drawing.Size(1303, 813)
+        Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Dgv_tablero)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.ListBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Guna2ImageButton2)
+        Me.Controls.Add(Me.Guna2ImageButton1)
+        Me.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Controls.Add(Me.NudCantidadReinas)
+        Me.Controls.Add(Me.PanFichasPJ2)
+        Me.Controls.Add(Me.PanFichasPJ1)
+        Me.Controls.Add(Me.Guna2GradientButton1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximumSize = New System.Drawing.Size(1303, 813)
+        Me.MinimumSize = New System.Drawing.Size(1303, 813)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reinas de Ajedrez"
+        Me.PanFichasPJ1.ResumeLayout(False)
+        Me.PanFichasPJ1.PerformLayout()
+        CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanFichasPJ2.ResumeLayout(False)
+        Me.PanFichasPJ2.PerformLayout()
+        CType(Me.Guna2PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NudCantidadReinas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_tablero, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Dgv_tablero As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents LbResultados As ListBox
+    Friend WithEvents Guna2GradientButton1 As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents PanFichasPJ1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents PanFichasPJ2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
+    Friend WithEvents Guna2PictureBox5 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox4 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox3 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox9 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox8 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox7 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox6 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents NudCantidadReinas As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2ImageButton1 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2ImageButton2 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents Dgv_tablero As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents Column15 As DataGridViewTextBoxColumn
+    Friend WithEvents Column16 As DataGridViewTextBoxColumn
+    Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
