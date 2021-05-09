@@ -56,4 +56,13 @@
     Private Sub Guna2ImageButton2_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton2.Click
 
     End Sub
+
+    Private Sub Dgv_tablero_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Dgv_tablero.CellMouseClick
+        ''POSICION en que se quiere agregar la reina
+        Dim Posicion_Fila As Integer = Dgv_tablero.CurrentCell.RowIndex
+        Dim Posicion_Columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
+        If (queens.Validar_Posicion(Posicion_Fila, Posicion_Columna)) Then
+            MsgBox("posicion valida")
+        End If
+    End Sub
 End Class
