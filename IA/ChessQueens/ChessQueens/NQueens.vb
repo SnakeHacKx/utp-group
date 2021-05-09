@@ -14,7 +14,7 @@
             _numeroDeReinas = value
         End Set
     End Property
-
+    ''ALGORITMO BACKTRAKING INICIO
     ''' <summary>
     ''' Metodo que permite saber si una posicion es segura o no.
     ''' </summary>
@@ -71,4 +71,16 @@
             End If
         Next
     End Sub
+    ''FIN ALGORITMO BACKTRACKING
+    Function Validar_Posicion(ByRef fila As Integer, ByRef columna As Integer) As Boolean
+        ''funcion para validar que la posicion seleccionada es valida
+        For Each solucion In soluciones
+            MsgBox(" " & solucion.Item(columna) & " " & fila)
+            If (solucion.Item(columna) = fila) Then
+                ''verifica que la posicion seleccionada se encuentra en alguna de las soluciones
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 End Class
