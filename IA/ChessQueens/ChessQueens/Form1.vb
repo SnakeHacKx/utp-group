@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Dim queens As New NQueens
-
+    Dim solucion_En_Curso As New List(Of Integer) 'guarda todas las posiciones que se ha introducido, es la solucion que se esta desarrollando
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i As Integer = 0 To 7
             Dgv_tablero.Rows.Add()
@@ -29,8 +29,9 @@
     Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
         queens.NumeroDeReinas = Convert.ToInt32(NudCantidadReinas.Text)
 
-        For x = 0 To queens.NumeroDeReinas
+        For x = 0 To queens.NumeroDeReinas - 1
             queens.solucionActual.Add(0)
+            solucion_En_Curso.Add(-1)
         Next
 
         queens.ColocarReina(0)
@@ -59,10 +60,32 @@
 
     Private Sub Dgv_tablero_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Dgv_tablero.CellMouseClick
         ''POSICION en que se quiere agregar la reina
+
+        queens.NumeroDePasos += 1
         Dim Posicion_Fila As Integer = Dgv_tablero.CurrentCell.RowIndex
         Dim Posicion_Columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
-        If (queens.Validar_Posicion(Posicion_Fila, Posicion_Columna)) Then
-            MsgBox("posicion valida")
-        End If
+
+        solucion_En_Curso.Item(Posicion_Columna) = Posicion_Fila
+        Dgv_tablero.Item(Posicion_Columna, Posicion_Fila).Style.BackColor = Color.Red
+        System.Threading.Thread.Sleep(5000)
+        queens.pasoDeIA(solucion_En_Curso, Posicion_Fila, Posicion_Columna)
+        queens.NumeroDePasos += 1
+        Dgv_tablero.Item(Posicion_Columna, Posicion_Fila).Style.BackColor = Color.Red
+        MsgBox("solucion actual ")
+        For Each s In solucion_En_Curso
+            MsgBox("" & s.ToString)
+        Next
+        'If (Not queens.Validar_Posicion(solucion_En_Curso)) Then
+        '    solucion_En_Curso.Item(Posicion_Columna) = -1
+        '    queens.NumeroDePasos -= 1
+        '    MsgBox("Se comieron a tu reina ")
+        '    MsgBox("solucion actual ")
+        '    For Each s In solucion_En_Curso
+        '        MsgBox("" & s.ToString)
+        '    Next
+        'Else
+        '    Dgv_tablero.Item(Posicion_Columna, Posicion_Fila).Style.BackColor = Color.Red
+        'End If
     End Sub
+
 End Class

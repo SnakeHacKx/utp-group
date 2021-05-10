@@ -342,7 +342,10 @@ Partial Class Form1
         '
         'Dgv_tablero
         '
+        Me.Dgv_tablero.AllowUserToAddRows = False
         Me.Dgv_tablero.AllowUserToDeleteRows = False
+        Me.Dgv_tablero.AllowUserToResizeColumns = False
+        Me.Dgv_tablero.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.Dgv_tablero.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_tablero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -370,11 +373,11 @@ Partial Class Form1
         Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle3
         Me.Dgv_tablero.EnableHeadersVisualStyles = False
         Me.Dgv_tablero.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Dgv_tablero.Location = New System.Drawing.Point(249, 141)
+        Me.Dgv_tablero.Location = New System.Drawing.Point(251, 141)
         Me.Dgv_tablero.Name = "Dgv_tablero"
         Me.Dgv_tablero.ReadOnly = True
-        Me.Dgv_tablero.RowHeadersVisible = False
-        Me.Dgv_tablero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgv_tablero.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.Dgv_tablero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.Dgv_tablero.Size = New System.Drawing.Size(806, 620)
         Me.Dgv_tablero.TabIndex = 17
         Me.Dgv_tablero.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
@@ -464,7 +467,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.WindowFrame
-        Me.ClientSize = New System.Drawing.Size(1303, 813)
+        Me.ClientSize = New System.Drawing.Size(1303, 788)
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Dgv_tablero)
         Me.Controls.Add(Me.Guna2ImageButton2)
@@ -477,7 +480,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Guna2GradientButton1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(1303, 813)
-        Me.MinimumSize = New System.Drawing.Size(1303, 813)
+        Me.MinimumSize = New System.Drawing.Size(1303, 766)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reinas de Ajedrez"
