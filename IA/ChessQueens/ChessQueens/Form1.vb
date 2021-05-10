@@ -33,13 +33,18 @@
                 Next
             End If
         Next
+
+        For x = 0 To 7
+            solucionActual.Add(Nothing)
+        Next
+
     End Sub
 
     Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
         queens.NumeroDeReinas = Convert.ToInt32(NudCantidadReinas.Text)
 
         For x = 0 To queens.NumeroDeReinas
-            queens.solucionActual.Add(0)
+            queens.solucionActual.Add(Nothing)
         Next
 
         queens.ColocarReina(0)
@@ -75,6 +80,8 @@
         Else
             solucionActual(fila) = columna
             filasNoSeguras.Add(fila)
+            MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
+            PonerColoresAlTablero(columna, fila)
         End If
     End Sub
 
@@ -85,23 +92,40 @@
     ''' <param name="columnaDePrueba">Columna a probar.</param>
     ''' <returns>True: es segura. | False: no es segura.</returns>
     Private Function PosicionEsSegura(filaDePrueba As Integer, columnaDePrueba As Integer) As Boolean
-        For fila = 0 To filaDePrueba - 1
+        For Each fila_ In filasNoSeguras
+            MsgBox("filaDePrueba: " + Str(filaDePrueba) + " | fila NO segura: " + Str(fila_))
+        Next
+        For fila = 0 To filaDePrueba
 
-            ' Verifica en horizontal
-            For Each fila_ In filasNoSeguras
-                If filaDePrueba = fila_ Then
+            'MsgBox("ENTRO... " & Str(solucionActual(fila)))
+            'MsgBox("columnaDePrueba: " & Str(columnaDePrueba) & " | solucionActual(fila): " & solucionActual(fila))
+            'MsgBox("SOLUCION ACUTASL" + Str(solucionActual(fila)))
+            If solucionActual(fila) <> Nothing Then
+                'MsgBox("ENTRO")
+                ' Verifica en horizontal
+                'If filasNoSeguras.Contains(filaDePrueba) Then
+                '    MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+                '    Return False
+                'End If
+                For Each fila_ In filasNoSeguras
+                    If filaDePrueba = fila_ Then
+                        MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+                        Return False
+                    End If
+                Next
+
+                ' Verifica en vertical
+                'MsgBox("test_colum: " & columnaDePrueba & " y current_solution[" & fila & " = " & solucionActual(fila))
+                If columnaDePrueba = solucionActual(fila) Then
+                    MsgBox("Columna no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
                     Return False
                 End If
-            Next
 
-            ' Verifica en vertical
-            If columnaDePrueba = solucionActual(fila) Then
-                Return False
-            End If
-
-            ' Verifica en diagonal
-            If Math.Abs(filaDePrueba - fila) = Math.Abs(columnaDePrueba - solucionActual(fila)) Then
-                Return False
+                ' Verifica en diagonal
+                If Math.Abs(filaDePrueba - fila) = Math.Abs(columnaDePrueba - solucionActual(fila)) Then
+                    MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+                    Return False
+                End If
             End If
         Next
 
@@ -111,51 +135,27 @@
 
     Private Sub PonerColoresAlTablero(filaActual As Integer, columnaActual As Integer)
         Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.FromArgb(53, 141, 219)
-        For i As Integer = 0 To 7
-            '    Dgv_tablero.Rows.Add()
-            '    Dgv_tablero.Rows(i).HeaderCell.Value = (i + 1).ToString
-            '    Dgv_tablero.Rows(i).Height = 75
-            '    If i Mod 2 Then
-            '        For j As Integer = 0 To 7
-            '            If j Mod 2 Then
-            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(223, 229, 229)
-            '            Else
-            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(57, 57, 57)
-            '            End If
-            '        Next
-            '    Else
-            '        For j As Integer = 0 To 7
-            '            If j Mod 2 Then
-            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(57, 57, 57)
-            '            Else
-            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(223, 229, 229)
-            '            End If
-            '        Next
-            '    End If
-            For j As Integer = 0 To 7
-
-            Next
-        Next
     End Sub
 
-    Private Sub Dgv_tablero_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Dgv_tablero.CellMouseClick
-        ''POSICION en que se quiere agregar la reina
-        Dim Posicion_Fila As Integer = Dgv_tablero.CurrentCell.RowIndex
-        Dim Posicion_Columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
-        If (queens.Validar_Posicion(Posicion_Fila, Posicion_Columna)) Then
-            MsgBox("posicion valida")
-            'PonerColoresAlTablero()
-        End If
-    End Sub
+    'Private Sub Dgv_tablero_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Dgv_tablero.CellMouseClick
+    '    ''POSICION en que se quiere agregar la reina
+    '    Dim Posicion_Fila As Integer = Dgv_tablero.CurrentCell.RowIndex
+    '    Dim Posicion_Columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
+    '    If (queens.Validar_Posicion(Posicion_Fila, Posicion_Columna)) Then
+    '        MsgBox("posicion valida")
+    '        'PonerColoresAlTablero()
+    '    End If
+    'End Sub
 
     Private Sub Dgv_tablero_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_tablero.CellClick
         'MsgBox(Str(Dgv_tablero.CurrentCell.RowIndex) + ", " + Str(Dgv_tablero.CurrentCell.ColumnIndex))
         Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
         Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
 
-        If PosicionEsSegura(fila, columna) Then
-            'MsgBox("posicion valida")
-            PonerColoresAlTablero(fila, columna)
-        End If
+        ColocarReina(fila, columna)
+        'If PosicionEsSegura(fila, columna) Then
+        '    'MsgBox("posicion valida")
+        '    PonerColoresAlTablero(fila, columna)
+        'End If
     End Sub
 End Class
