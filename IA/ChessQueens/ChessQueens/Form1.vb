@@ -109,16 +109,53 @@
         Return True
     End Function
 
+    Private Sub PonerColoresAlTablero(filaActual As Integer, columnaActual As Integer)
+        Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.FromArgb(53, 141, 219)
+        For i As Integer = 0 To 7
+            '    Dgv_tablero.Rows.Add()
+            '    Dgv_tablero.Rows(i).HeaderCell.Value = (i + 1).ToString
+            '    Dgv_tablero.Rows(i).Height = 75
+            '    If i Mod 2 Then
+            '        For j As Integer = 0 To 7
+            '            If j Mod 2 Then
+            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(223, 229, 229)
+            '            Else
+            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(57, 57, 57)
+            '            End If
+            '        Next
+            '    Else
+            '        For j As Integer = 0 To 7
+            '            If j Mod 2 Then
+            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(57, 57, 57)
+            '            Else
+            '                Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(223, 229, 229)
+            '            End If
+            '        Next
+            '    End If
+            For j As Integer = 0 To 7
+
+            Next
+        Next
+    End Sub
+
     Private Sub Dgv_tablero_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Dgv_tablero.CellMouseClick
         ''POSICION en que se quiere agregar la reina
         Dim Posicion_Fila As Integer = Dgv_tablero.CurrentCell.RowIndex
         Dim Posicion_Columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
         If (queens.Validar_Posicion(Posicion_Fila, Posicion_Columna)) Then
             MsgBox("posicion valida")
+            'PonerColoresAlTablero()
         End If
     End Sub
 
     Private Sub Dgv_tablero_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_tablero.CellClick
-        MsgBox(Str(Dgv_tablero.CurrentCell.RowIndex) + ", " + Str(Dgv_tablero.CurrentCell.ColumnIndex))
+        'MsgBox(Str(Dgv_tablero.CurrentCell.RowIndex) + ", " + Str(Dgv_tablero.CurrentCell.ColumnIndex))
+        Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
+        Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
+
+        If PosicionEsSegura(fila, columna) Then
+            'MsgBox("posicion valida")
+            PonerColoresAlTablero(fila, columna)
+        End If
     End Sub
 End Class

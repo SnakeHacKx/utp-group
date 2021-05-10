@@ -244,6 +244,7 @@ Partial Class Form1
         '
         'Dgv_tablero
         '
+        Me.Dgv_tablero.AllowUserToAddRows = False
         Me.Dgv_tablero.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.Dgv_tablero.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
@@ -276,7 +277,7 @@ Partial Class Form1
         Me.Dgv_tablero.Name = "Dgv_tablero"
         Me.Dgv_tablero.ReadOnly = True
         Me.Dgv_tablero.RowHeadersVisible = False
-        Me.Dgv_tablero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgv_tablero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.Dgv_tablero.Size = New System.Drawing.Size(806, 620)
         Me.Dgv_tablero.TabIndex = 17
         Me.Dgv_tablero.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
@@ -364,9 +365,9 @@ Partial Class Form1
         'LbResultados
         '
         Me.LbResultados.FormattingEnabled = True
-        Me.LbResultados.Location = New System.Drawing.Point(964, 11)
+        Me.LbResultados.Location = New System.Drawing.Point(1078, 141)
         Me.LbResultados.Name = "LbResultados"
-        Me.LbResultados.Size = New System.Drawing.Size(213, 121)
+        Me.LbResultados.Size = New System.Drawing.Size(213, 329)
         Me.LbResultados.TabIndex = 1
         '
         'Guna2HtmlLabel5
