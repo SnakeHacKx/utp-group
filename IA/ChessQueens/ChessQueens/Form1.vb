@@ -92,30 +92,16 @@
     ''' <param name="columnaDePrueba">Columna a probar.</param>
     ''' <returns>True: es segura. | False: no es segura.</returns>
     Private Function PosicionEsSegura(filaDePrueba As Integer, columnaDePrueba As Integer) As Boolean
-        For Each fila_ In filasNoSeguras
-            MsgBox("filaDePrueba: " + Str(filaDePrueba) + " | fila NO segura: " + Str(fila_))
-        Next
         For fila = 0 To filaDePrueba
-
-            'MsgBox("ENTRO... " & Str(solucionActual(fila)))
-            'MsgBox("columnaDePrueba: " & Str(columnaDePrueba) & " | solucionActual(fila): " & solucionActual(fila))
-            'MsgBox("SOLUCION ACUTASL" + Str(solucionActual(fila)))
             If solucionActual(fila) <> Nothing Then
-                'MsgBox("ENTRO")
+
                 ' Verifica en horizontal
-                'If filasNoSeguras.Contains(filaDePrueba) Then
-                '    MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
-                '    Return False
-                'End If
-                For Each fila_ In filasNoSeguras
-                    If filaDePrueba = fila_ Then
-                        MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
-                        Return False
-                    End If
-                Next
+                If filasNoSeguras.Contains(filaDePrueba) Then
+                    MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+                    Return False
+                End If
 
                 ' Verifica en vertical
-                'MsgBox("test_colum: " & columnaDePrueba & " y current_solution[" & fila & " = " & solucionActual(fila))
                 If columnaDePrueba = solucionActual(fila) Then
                     MsgBox("Columna no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
                     Return False
@@ -148,14 +134,9 @@
     'End Sub
 
     Private Sub Dgv_tablero_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_tablero.CellClick
-        'MsgBox(Str(Dgv_tablero.CurrentCell.RowIndex) + ", " + Str(Dgv_tablero.CurrentCell.ColumnIndex))
         Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
         Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
 
         ColocarReina(fila, columna)
-        'If PosicionEsSegura(fila, columna) Then
-        '    'MsgBox("posicion valida")
-        '    PonerColoresAlTablero(fila, columna)
-        'End If
     End Sub
 End Class
