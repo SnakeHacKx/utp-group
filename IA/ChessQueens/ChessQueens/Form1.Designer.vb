@@ -285,7 +285,7 @@ Partial Class Form1
         Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle3
         Me.Dgv_tablero.EnableHeadersVisualStyles = False
         Me.Dgv_tablero.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Dgv_tablero.Location = New System.Drawing.Point(268, 141)
+        Me.Dgv_tablero.Location = New System.Drawing.Point(249, 138)
         Me.Dgv_tablero.Name = "Dgv_tablero"
         Me.Dgv_tablero.ReadOnly = True
         Me.Dgv_tablero.RowHeadersVisible = False
