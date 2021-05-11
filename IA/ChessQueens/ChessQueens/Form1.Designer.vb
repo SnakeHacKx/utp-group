@@ -51,6 +51,12 @@ Partial Class Form1
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.LbResultados = New System.Windows.Forms.ListBox()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox6 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox7 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox8 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.PanFichasPJ1.SuspendLayout()
         CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +64,11 @@ Partial Class Form1
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NudCantidadReinas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_tablero, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2GradientButton1
@@ -366,9 +377,9 @@ Partial Class Form1
         'LbResultados
         '
         Me.LbResultados.FormattingEnabled = True
-        Me.LbResultados.Location = New System.Drawing.Point(1078, 141)
+        Me.LbResultados.Location = New System.Drawing.Point(982, 21)
         Me.LbResultados.Name = "LbResultados"
-        Me.LbResultados.Size = New System.Drawing.Size(213, 329)
+        Me.LbResultados.Size = New System.Drawing.Size(156, 69)
         Me.LbResultados.TabIndex = 1
         '
         'Guna2HtmlLabel5
@@ -382,12 +393,92 @@ Partial Class Form1
         Me.Guna2HtmlLabel5.TabIndex = 20
         Me.Guna2HtmlLabel5.Text = "IA"
         '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BorderColor = System.Drawing.Color.Black
+        Me.Guna2Panel1.BorderRadius = 20
+        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel6)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox6)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox7)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox8)
+        Me.Guna2Panel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Guna2Panel1.Location = New System.Drawing.Point(1090, 138)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
+        Me.Guna2Panel1.Size = New System.Drawing.Size(201, 623)
+        Me.Guna2Panel1.TabIndex = 20
+        '
+        'Guna2HtmlLabel6
+        '
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(80, 6)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(37, 41)
+        Me.Guna2HtmlLabel6.TabIndex = 19
+        Me.Guna2HtmlLabel6.Text = "IA"
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(109, 199)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.ShadowDecoration.Parent = Me.Guna2PictureBox1
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 3
+        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox1.UseTransparentBackground = True
+        '
+        'Guna2PictureBox6
+        '
+        Me.Guna2PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox6.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox6.Location = New System.Drawing.Point(13, 199)
+        Me.Guna2PictureBox6.Name = "Guna2PictureBox6"
+        Me.Guna2PictureBox6.ShadowDecoration.Parent = Me.Guna2PictureBox6
+        Me.Guna2PictureBox6.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox6.TabIndex = 2
+        Me.Guna2PictureBox6.TabStop = False
+        Me.Guna2PictureBox6.UseTransparentBackground = True
+        '
+        'Guna2PictureBox7
+        '
+        Me.Guna2PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox7.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox7.Location = New System.Drawing.Point(109, 58)
+        Me.Guna2PictureBox7.Name = "Guna2PictureBox7"
+        Me.Guna2PictureBox7.ShadowDecoration.Parent = Me.Guna2PictureBox7
+        Me.Guna2PictureBox7.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox7.TabIndex = 1
+        Me.Guna2PictureBox7.TabStop = False
+        Me.Guna2PictureBox7.UseTransparentBackground = True
+        '
+        'Guna2PictureBox8
+        '
+        Me.Guna2PictureBox8.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox8.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
+        Me.Guna2PictureBox8.Location = New System.Drawing.Point(13, 58)
+        Me.Guna2PictureBox8.Name = "Guna2PictureBox8"
+        Me.Guna2PictureBox8.ShadowDecoration.Parent = Me.Guna2PictureBox8
+        Me.Guna2PictureBox8.Size = New System.Drawing.Size(73, 126)
+        Me.Guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox8.TabIndex = 0
+        Me.Guna2PictureBox8.TabStop = False
+        Me.Guna2PictureBox8.UseTransparentBackground = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.WindowFrame
         Me.ClientSize = New System.Drawing.Size(1303, 813)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Dgv_tablero)
         Me.Controls.Add(Me.Guna2ImageButton2)
@@ -412,6 +503,12 @@ Partial Class Form1
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NudCantidadReinas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_tablero, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel1.PerformLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -441,4 +538,10 @@ Partial Class Form1
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LbResultados As ListBox
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox6 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox7 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox8 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

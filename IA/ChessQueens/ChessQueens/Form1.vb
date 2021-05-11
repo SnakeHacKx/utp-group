@@ -9,10 +9,19 @@
     Public solucionActual As New List(Of Integer)
 
     Public filasNoSeguras As New List(Of Integer)
+
+    Public columnasNoSeguras As New List(Of Integer)
+
+    Public diagonalesNoSeguras As New List(Of List(Of Integer))
     'Lista de listas de soluciones encontradas
     Public soluciones As New List(Of List(Of Integer))
 
+
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim Dgv_tab As New DataGridViewImageColumn
+        Dgv_tab.ImageLayout = DataGridViewImageCellLayout.Stretch
+
         For i As Integer = 0 To 7
             Dgv_tablero.Rows.Add()
             Dgv_tablero.Rows(i).HeaderCell.Value = (i + 1).ToString
@@ -59,9 +68,6 @@
             solucionActual.Add(Nothing)
         Next
 
-
-
-
         'queens.ColocarReina(0)
         'LbResultados.Items.Add("Resultados para " + Str(queens.NumeroDeReinas) + " Reinas:")
         'LbResultados.Items.Add(Str(queens.soluciones.Count) + " soluciones encontradas")
@@ -95,6 +101,17 @@
         Else
             solucionActual(fila) = columna
             filasNoSeguras.Add(fila)
+            columnasNoSeguras.Add(columna)
+
+            For _fila = 0 To fila
+                If Math.Abs(fila - _fila) = Math.Abs(columna - solucionActual(_fila)) Then
+                    temp.Add(fila)
+                    temp.Add(columna)
+                    diagonalesNoSeguras.Add(temp)
+                    temp.Clear()
+                End If
+            Next
+
             MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
             PonerColoresAlTablero(columna, fila)
         End If
@@ -107,28 +124,47 @@
     ''' <param name="columnaDePrueba">Columna a probar.</param>
     ''' <returns>True: es segura. | False: no es segura.</returns>
     Private Function PosicionEsSegura(filaDePrueba As Integer, columnaDePrueba As Integer) As Boolean
-        For fila = 0 To filaDePrueba
-            If solucionActual(fila) <> Nothing Then
+        ' Verifica en horizontal
+        If filasNoSeguras.Contains(filaDePrueba) Then
+            MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+            Return False
+        End If
 
-                ' Verifica en horizontal
-                If filasNoSeguras.Contains(filaDePrueba) Then
-                    MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
-                    Return False
+        ' Verifica en vertical
+        If columnasNoSeguras.Contains(columnaDePrueba) Then
+            MsgBox("Columna no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+            Return False
+        End If
+
+        ' Verifica en diagonal
+        Dim filaIgual As Boolean = False
+        Dim columnaIgual As Boolean = False
+        If diagonalesNoSeguras.Count > 0 Then
+            MsgBox(diagonalesNoSeguras.Count)
+            For i = 0 To diagonalesNoSeguras.Count
+                If filaDePrueba = diagonalesNoSeguras(i)(0) Then
+                    filaIgual = True
                 End If
 
-                ' Verifica en vertical
-                If columnaDePrueba = solucionActual(fila) Then
-                    MsgBox("Columna no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
-                    Return False
+                If columnaDePrueba = diagonalesNoSeguras(i)(1) Then
+                    columnaIgual = True
                 End If
 
-                ' Verifica en diagonal
-                If Math.Abs(filaDePrueba - fila) = Math.Abs(columnaDePrueba - solucionActual(fila)) Then
-                    MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+                If filaIgual And columnaIgual Then
+                    MsgBox("La diagonal no es segura en la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
                     Return False
+                Else
+                    filaIgual = False
+                    columnaIgual = False
                 End If
-            End If
-        Next
+            Next
+        End If
+        'For fila = 0 To filaDePrueba
+        '    If Math.Abs(filaDePrueba - fila) = Math.Abs(columnaDePrueba - solucionActual(fila)) Then
+        '        MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+        '        Return False
+        '    End If
+        'Next
 
         'No se ha encontrado otras reinas que ataquen a la actual
         Return True
@@ -136,6 +172,8 @@
 
     Private Sub PonerColoresAlTablero(filaActual As Integer, columnaActual As Integer)
         Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.FromArgb(53, 141, 219)
+
+        'Dgv_tablero.Rows(columnaActual).Cells(filaActual).Value = Image.FromFile("C:\Users\Omar Alexis\utp-group\IA\ChessQueens\ChessQueens\Resources\queen-icon.png")
     End Sub
 
     'Private Sub Dgv_tablero_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Dgv_tablero.CellMouseClick

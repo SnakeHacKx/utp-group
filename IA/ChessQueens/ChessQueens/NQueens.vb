@@ -57,7 +57,6 @@
     ''' <param name="fila">Fila actual.</param>
     Public Sub ColocarReina(fila As Integer)
         Dim temp As New List(Of Integer)
-
         For columna = 0 To NumeroDeReinas - 1
             If Not PosicionEsSegura(fila, columna) Then
                 Continue For
