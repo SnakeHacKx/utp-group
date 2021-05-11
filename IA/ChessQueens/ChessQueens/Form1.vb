@@ -1,6 +1,8 @@
 ﻿Public Class Form1
     Dim queens As New NQueens
 
+    Dim juegoIniciado As Boolean = False
+
     'Cantidad de reinas
     Dim numeroDeReinas As Integer
     'Lista que contendra el valor de prueba actual
@@ -33,30 +35,43 @@
                 Next
             End If
         Next
-
-        For x = 0 To 7
-            solucionActual.Add(Nothing)
-        Next
-
     End Sub
 
     Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
-        queens.NumeroDeReinas = Convert.ToInt32(NudCantidadReinas.Text)
+        If juegoIniciado Then
+            Guna2GradientButton1.Text = "Iniciar"
+            Guna2GradientButton1.Width = 139
+            juegoIniciado = False
+        Else
+            Guna2GradientButton1.Text = "Terminar"
+            Guna2GradientButton1.Width = 155
+            juegoIniciado = True
+        End If
 
-        For x = 0 To queens.NumeroDeReinas
-            queens.solucionActual.Add(Nothing)
+        numeroDeReinas = Convert.ToInt32(NudCantidadReinas.Text)
+
+        'For x = 0 To queens.NumeroDeReinas
+        '    queens.solucionActual.Add(Nothing)
+        'Next
+
+
+        For x = 0 To numeroDeReinas
+            solucionActual.Add(Nothing)
         Next
 
-        queens.ColocarReina(0)
-        LbResultados.Items.Add("Resultados para " + Str(queens.NumeroDeReinas) + " Reinas:")
-        LbResultados.Items.Add(Str(queens.soluciones.Count) + " soluciones encontradas")
-        For i = 0 To queens.soluciones.Count - 1
-            Dim a As String = ""
-            For x = 0 To queens.NumeroDeReinas - 1
-                a &= " " & queens.soluciones(i).Item(x).ToString
-            Next
-            LbResultados.Items.Add(a)
-        Next
+
+
+
+        'queens.ColocarReina(0)
+        'LbResultados.Items.Add("Resultados para " + Str(queens.NumeroDeReinas) + " Reinas:")
+        'LbResultados.Items.Add(Str(queens.soluciones.Count) + " soluciones encontradas")
+        'For i = 0 To queens.soluciones.Count - 1
+        '    Dim a As String = ""
+        '    For x = 0 To queens.NumeroDeReinas - 1
+        '        a &= " " & queens.soluciones(i).Item(x).ToString
+        '    Next
+        '    LbResultados.Items.Add(a)
+        'Next
     End Sub
 
     Private Sub Guna2PictureBox10_Click(sender As Object, e As EventArgs)
@@ -134,9 +149,18 @@
     'End Sub
 
     Private Sub Dgv_tablero_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_tablero.CellClick
-        Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
-        Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
 
-        ColocarReina(fila, columna)
+        If juegoIniciado Then
+            Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
+            Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
+
+            ColocarReina(fila, columna)
+
+            'Aqui deberia mandar a hacer algo a la IA si y solo si quedan espacios disponibles
+            'si no, termina el juego
+        Else
+            MsgBox("El juego no ha sido iniciado, favor elija la cantidadd de reinas y haga click en el boton de INICIAR")
+        End If
+
     End Sub
 End Class

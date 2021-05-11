@@ -181,6 +181,7 @@ Partial Class Form1
         Me.NudCantidadReinas.ShadowDecoration.Parent = Me.NudCantidadReinas
         Me.NudCantidadReinas.Size = New System.Drawing.Size(58, 36)
         Me.NudCantidadReinas.TabIndex = 11
+        Me.NudCantidadReinas.Value = New Decimal(New Integer() {8, 0, 0, 0})
         '
         'Guna2HtmlLabel1
         '
