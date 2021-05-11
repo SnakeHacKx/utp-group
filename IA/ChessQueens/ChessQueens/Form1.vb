@@ -102,16 +102,6 @@
             solucionActual(fila) = columna
             filasNoSeguras.Add(fila)
             columnasNoSeguras.Add(columna)
-
-            For _fila = 0 To fila
-                If Math.Abs(fila - _fila) = Math.Abs(columna - solucionActual(_fila)) Then
-                    temp.Add(fila)
-                    temp.Add(columna)
-                    diagonalesNoSeguras.Add(temp)
-                    temp.Clear()
-                End If
-            Next
-
             MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
             PonerColoresAlTablero(columna, fila)
         End If
@@ -137,34 +127,15 @@
         End If
 
         ' Verifica en diagonal
-        Dim filaIgual As Boolean = False
-        Dim columnaIgual As Boolean = False
-        If diagonalesNoSeguras.Count > 0 Then
-            MsgBox(diagonalesNoSeguras.Count)
-            For i = 0 To diagonalesNoSeguras.Count
-                If filaDePrueba = diagonalesNoSeguras(i)(0) Then
-                    filaIgual = True
-                End If
-
-                If columnaDePrueba = diagonalesNoSeguras(i)(1) Then
-                    columnaIgual = True
-                End If
-
-                If filaIgual And columnaIgual Then
-                    MsgBox("La diagonal no es segura en la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+        For fila = 0 To filaDePrueba
+            If solucionActual(fila) <> Nothing Then
+                MsgBox(Str(Math.Abs(filaDePrueba - fila)) + " | " + Str(Math.Abs(columnaDePrueba - solucionActual(fila))))
+                If Math.Abs(filaDePrueba - fila) = Math.Abs(columnaDePrueba - solucionActual(fila)) Then
+                    MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
                     Return False
-                Else
-                    filaIgual = False
-                    columnaIgual = False
                 End If
-            Next
-        End If
-        'For fila = 0 To filaDePrueba
-        '    If Math.Abs(filaDePrueba - fila) = Math.Abs(columnaDePrueba - solucionActual(fila)) Then
-        '        MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
-        '        Return False
-        '    End If
-        'Next
+            End If
+        Next
 
         'No se ha encontrado otras reinas que ataquen a la actual
         Return True
