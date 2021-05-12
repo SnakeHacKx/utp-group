@@ -58,17 +58,18 @@
     ''' Empezamos en la fila 0 y cada fila se ira agregando en la recursion.
     ''' </summary>
     ''' <param name="fila">Fila actual.</param>
-    Public Sub ColocarReina(ByRef fila As Integer, ByRef columna As Integer)
-        Dim temp As New List(Of Integer)
+    Public Sub ColocarReina(ByRef fila As Integer, ByRef columna As Integer, ByRef user As Boolean)
+        ' Dim temp As New List(Of Integer)
 
         If Not PosicionEsSegura(fila, columna) Then
+            MsgBox("La reina en la posicion seleccionada a sido devorada")
             Return
         Else
             solucionActual(columna) = fila
             filasNoSeguras.Add(fila)
             columnasNoSeguras.Add(columna)
-            MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
-            PonerColoresAlTablero(columna, fila)
+            ' MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
+            PonerColoresAlTablero(columna, fila, user)
         End If
     End Sub
 
@@ -82,23 +83,21 @@
         ' Verifica en horizontal
         For i As Integer = 0 To filasNoSeguras.Count - 1
             If filasNoSeguras(i) = filaDePrueba Then
-                'MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
                 Return False
             End If
         Next
 
         ' Verifica en vertical
         If columnasNoSeguras.Contains(columnaDePrueba) Then
-            'MsgBox("Columna no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
             Return False
         End If
 
         ' Verifica en diagonal
         For columna = 0 To cantidadDeReinas - 1
-            If solucionActual.Item(columna) <> Nothing Then
-                ' MsgBox("suma " & (Math.Abs(columna + solucionActual.Item(columna)) = Math.Abs(filaDePrueba + columnaDePrueba)).ToString & " resta " & (solucionActual.Item(columna) - columna = filaDePrueba - columnaDePrueba).ToString)
-                If (Math.Abs(columna + solucionActual.Item(columna)) = Math.Abs(filaDePrueba + columnaDePrueba)) Or (solucionActual.Item(columna) - columna = filaDePrueba - columnaDePrueba) Then
-                    'MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+            If solucionActual.Item(columna) <> -1 Then
+                'si la sima de coordenadas del punto a agregar es igual a la suma de coordenadas de una posicion existente entonces no es segura la diagonal
+                'igualmente con la resta
+                If (Math.Abs(columna + solucionActual.Item(columna)) = Math.Abs(filaDePrueba + columnaDePrueba)) Or (columna - solucionActual.Item(columna) = columnaDePrueba - filaDePrueba) Then
                     Return False
                 End If
             End If
@@ -111,8 +110,13 @@
     ''' <summary>
     ''' Metodo que colorea una celda del tablero, especificamente la que el usuario o la IA escoja.
     ''' </summary>
-    Private Sub PonerColoresAlTablero(filaActual As Integer, columnaActual As Integer)
-        Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.FromArgb(53, 141, 219)
+    Private Sub PonerColoresAlTablero(filaActual As Integer, columnaActual As Integer, user As Boolean)
+        If user Then
+            Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.FromArgb(53, 141, 219)
+        Else
+            Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.Green
+        End If
+
     End Sub
 
     ''' <summary>
@@ -127,10 +131,11 @@
         If juegoIniciado Then
             Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
             Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
-
-            ColocarReina(fila, columna)
+            Dim user As Boolean = True
+            ColocarReina(fila, columna, user)
             'MsgBox("ahora viene la IA")
-            MovimientoIA(fila, columna)
+            MovimientoIA(fila, columna, user)
+
         Else
             MsgBox("El juego no ha sido iniciado, favor elija la cantidadd de reinas y haga click en el boton de INICIAR")
         End If
@@ -143,20 +148,38 @@
     ''' </summary>
     ''' <param name="fila">?</param>
     ''' <param name="columna">???</param>
-    Sub MovimientoIA(ByRef fila As Integer, ByRef columna As Integer)
+    Sub MovimientoIA(ByRef fila As Integer, ByRef columna As Integer, ByRef user As Boolean)
+        user = False
         Dim numeroAleatorio As New Random()
+        'variable para controlar el while, cambia a true si hay posiciones validas disponibles
+        Dim valida As Boolean = False
+        For i As Integer = 0 To cantidadDeReinas - 1 'for para recorrer todas las posiciones del tablero
+            For j As Integer = 0 To cantidadDeReinas - 1
+                valida = PosicionEsSegura(i, j)
+                If valida Then ' si es segura la posicion se le asignan los valores a fila y columna para que se agreguen a las listas correspondientes
+                    fila = i
+                    columna = j
+                    Exit For
+                End If
+            Next
+            If valida Then 'si es valida = true se sale del segundo for 
+                Exit For
+            End If
+        Next
+        'End While
+        'si valida llega al final de todas las posiciones sin volverse true quiere decir que no hay
+        'posiciones validas en todo el tablero por lo tanto termina el juego
+        If valida Then
+            ' valida es true por lo tanto se agrega la posicion a la solucion actual y las filas/columnas no seguras
+            solucionActual(columna) = fila
+            filasNoSeguras.Add(fila)
+            columnasNoSeguras.Add(columna)
+            'MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
+            PonerColoresAlTablero(columna, fila, user) ' user solo es para asignar el color deacuerdo por que metodo entra
+        Else
+            MsgBox("se acabo el juego, no hay mas posiciones validas disponibles")
+        End If
 
-        'Posible bucle infinito si no hay mas posiciones seguras
-        While Not PosicionEsSegura(fila, columna)
-            fila = numeroAleatorio.Next(0, cantidadDeReinas - 1)
-            columna = numeroAleatorio.Next(0, cantidadDeReinas - 1)
-        End While
-
-        solucionActual(columna) = fila
-        filasNoSeguras.Add(fila)
-        columnasNoSeguras.Add(columna)
-        'MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
-        PonerColoresAlTablero(columna, fila)
     End Sub
 
     ''' <summary>
@@ -178,7 +201,7 @@
         ColocarTablero()
 
         For x = 0 To cantidadDeReinas - 1
-            solucionActual.Add(Nothing)
+            solucionActual.Add(-1)
         Next
     End Sub
 
