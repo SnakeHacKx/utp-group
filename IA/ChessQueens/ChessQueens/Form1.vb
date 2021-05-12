@@ -156,12 +156,14 @@
         Dim numeroAleatorio As New Random()
         'variable para controlar el while, cambia a true si hay posiciones validas disponibles
         Dim valida As Boolean = False
-        For i As Integer = 0 To cantidadDeReinas - 1 'for para recorrer todas las posiciones del tablero
+        For i As Integer = 0 To 150 'for para recorrer todas las posiciones del tablero
             For j As Integer = 0 To cantidadDeReinas - 1
-                valida = PosicionEsSegura(i, j)
+                fila = numeroAleatorio.Next(0, 7)
+                columna = numeroAleatorio.Next(0, 7)
+                valida = PosicionEsSegura(fila, columna)
                 If valida Then ' si es segura la posicion se le asignan los valores a fila y columna para que se agreguen a las listas correspondientes
-                    fila = i
-                    columna = j
+                    'fila = i
+                    ' columna = j
                     Exit For
                 End If
             Next
