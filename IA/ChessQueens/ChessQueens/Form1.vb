@@ -1,33 +1,40 @@
 ﻿Public Class Form1
+    'Objeto de la clase NQueens
     Dim queens As New NQueens
-
+    'Variable de control que me permite saber si el juego ha sido iniciado o no
     Dim juegoIniciado As Boolean = False
-
     'Cantidad de reinas
-    Dim numeroDeReinas As Integer
+    Dim cantidadDeReinas As Integer
     'Lista que contendra el valor de prueba actual
     Public solucionActual As New List(Of Integer)
-
+    'Lista que contendra las filas no seguras para una reina
     Public filasNoSeguras As New List(Of Integer)
-
+    'Lista que contendra las columnas no seguras para una reina
     Public columnasNoSeguras As New List(Of Integer)
-
+    'Lista que contendra las diagonales no seguras para una reina
     Public diagonalesNoSeguras As New List(Of List(Of Integer))
     'Lista de listas de soluciones encontradas
     Public soluciones As New List(Of List(Of Integer))
 
-
-
+    ''' <summary>
+    ''' Evento Load en el que se inicializan los colores del tablero.
+    ''' </summary>
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim Dgv_tab As New DataGridViewImageColumn
-        Dgv_tab.ImageLayout = DataGridViewImageCellLayout.Stretch
+        cantidadDeReinas = 8  'Por defecto, inicia con 8 reinas
+        ColocarTablero()
+    End Sub
 
-        For i As Integer = 0 To 7
+    ''' <summary>
+    ''' Coloca el tablero del tamano que se le indique.
+    ''' </summary>
+    Private Sub ColocarTablero()
+        ' (SOLO SIRVE 8x8 POR EL MOMENTO)
+        For i As Integer = 0 To cantidadDeReinas - 1
             Dgv_tablero.Rows.Add()
             Dgv_tablero.Rows(i).HeaderCell.Value = (i + 1).ToString
             Dgv_tablero.Rows(i).Height = 75
             If i Mod 2 Then
-                For j As Integer = 0 To 7
+                For j As Integer = 0 To cantidadDeReinas - 1
                     If j Mod 2 Then
                         Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(223, 229, 229)
                     Else
@@ -35,7 +42,7 @@
                     End If
                 Next
             Else
-                For j As Integer = 0 To 7
+                For j As Integer = 0 To cantidadDeReinas - 1
                     If j Mod 2 Then
                         Dgv_tablero.Item(j, i).Style.BackColor = Color.FromArgb(57, 57, 57)
                     Else
@@ -44,48 +51,6 @@
                 Next
             End If
         Next
-    End Sub
-
-    Private Sub Guna2GradientButton1_Click(sender As Object, e As EventArgs) Handles Guna2GradientButton1.Click
-        If juegoIniciado Then
-            Guna2GradientButton1.Text = "Iniciar"
-            Guna2GradientButton1.Width = 139
-            juegoIniciado = False
-        Else
-            Guna2GradientButton1.Text = "Terminar"
-            Guna2GradientButton1.Width = 155
-            juegoIniciado = True
-        End If
-
-        numeroDeReinas = Convert.ToInt32(NudCantidadReinas.Text)
-
-        'For x = 0 To queens.NumeroDeReinas
-        '    queens.solucionActual.Add(Nothing)
-        'Next
-
-
-        For x = 0 To numeroDeReinas - 1
-            solucionActual.Add(Nothing)
-        Next
-
-        'queens.ColocarReina(0)
-        'LbResultados.Items.Add("Resultados para " + Str(queens.NumeroDeReinas) + " Reinas:")
-        'LbResultados.Items.Add(Str(queens.soluciones.Count) + " soluciones encontradas")
-        'For i = 0 To queens.soluciones.Count - 1
-        '    Dim a As String = ""
-        '    For x = 0 To queens.NumeroDeReinas - 1
-        '        a &= " " & queens.soluciones(i).Item(x).ToString
-        '    Next
-        '    LbResultados.Items.Add(a)
-        'Next
-    End Sub
-
-    Private Sub Guna2PictureBox10_Click(sender As Object, e As EventArgs)
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton1.Click
-        Application.Exit()
     End Sub
 
     ''' <summary>
@@ -114,14 +79,13 @@
     ''' <param name="columnaDePrueba">Columna a probar.</param>
     ''' <returns>True: es segura. | False: no es segura.</returns>
     Private Function PosicionEsSegura(ByRef filaDePrueba As Integer, ByRef columnaDePrueba As Integer) As Boolean
+        ' Verifica en horizontal
         For i As Integer = 0 To filasNoSeguras.Count - 1
             If filasNoSeguras(i) = filaDePrueba Then
-                '  MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+                'MsgBox("Fila no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
                 Return False
             End If
         Next
-        ' Verifica en horizontal
-
 
         ' Verifica en vertical
         If columnasNoSeguras.Contains(columnaDePrueba) Then
@@ -130,11 +94,11 @@
         End If
 
         ' Verifica en diagonal
-        For columna = 0 To numeroDeReinas - 1
+        For columna = 0 To cantidadDeReinas - 1
             If solucionActual.Item(columna) <> Nothing Then
                 ' MsgBox("suma " & (Math.Abs(columna + solucionActual.Item(columna)) = Math.Abs(filaDePrueba + columnaDePrueba)).ToString & " resta " & (solucionActual.Item(columna) - columna = filaDePrueba - columnaDePrueba).ToString)
                 If (Math.Abs(columna + solucionActual.Item(columna)) = Math.Abs(filaDePrueba + columnaDePrueba)) Or (solucionActual.Item(columna) - columna = filaDePrueba - columnaDePrueba) Then
-                    ' MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
+                    'MsgBox("Diagonal no segura para la posicion: (" & filaDePrueba & ", " & columnaDePrueba & ")")
                     Return False
                 End If
             End If
@@ -144,53 +108,91 @@
         Return True
     End Function
 
+    ''' <summary>
+    ''' Metodo que colorea una celda del tablero, especificamente la que el usuario o la IA escoja.
+    ''' </summary>
     Private Sub PonerColoresAlTablero(filaActual As Integer, columnaActual As Integer)
         Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.FromArgb(53, 141, 219)
-
-        'Dgv_tablero.Rows(columnaActual).Cells(filaActual).Value = Image.FromFile("C:\Users\Omar Alexis\utp-group\IA\ChessQueens\ChessQueens\Resources\queen-icon.png")
     End Sub
 
-    'Private Sub Dgv_tablero_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Dgv_tablero.CellMouseClick
-    '    ''POSICION en que se quiere agregar la reina
-    '    Dim Posicion_Fila As Integer = Dgv_tablero.CurrentCell.RowIndex
-    '    Dim Posicion_Columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
-    '    If (queens.Validar_Posicion(Posicion_Fila, Posicion_Columna)) Then
-    '        MsgBox("posicion valida")
-    '        'PonerColoresAlTablero()
-    '    End If
-    'End Sub
-
+    ''' <summary>
+    ''' Evento click de las celdas del tablero.
+    ''' </summary>
+    ''' <remarks>
+    ''' Llama a colocar la reina por parte del usuario y la IA mediante los metodos
+    ''' <c>ColocarReina</c> y <c>MovimientoIA</c>
+    ''' </remarks>
     Private Sub Dgv_tablero_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_tablero.CellClick
-
+        Dim cantidadDeVerificaciones As Integer = 0
         If juegoIniciado Then
             Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
             Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
 
             ColocarReina(fila, columna)
-            MsgBox("ahora viene la IA")
-            Dim numeroAleatorio As New Random()
-            fila = numeroAleatorio.Next(0, numeroDeReinas - 1)
-            columna = numeroAleatorio.Next(0, numeroDeReinas - 1)
-            movimientoIA(fila, columna)
-            'Aqui deberia mandar a hacer algo a la IA si y solo si quedan espacios disponibles
-            'si no, termina el juego
+            'MsgBox("ahora viene la IA")
+            MovimientoIA(fila, columna)
         Else
             MsgBox("El juego no ha sido iniciado, favor elija la cantidadd de reinas y haga click en el boton de INICIAR")
         End If
 
     End Sub
-    Sub movimientoIA(ByRef fila As Integer, ByRef columna As Integer)
+
+    ''' <summary>
+    ''' Metodo que genera un movimiento de la IA en forma aleatoria que permite colocar 
+    ''' una reina dentro de una casilla disponible
+    ''' </summary>
+    ''' <param name="fila">?</param>
+    ''' <param name="columna">???</param>
+    Sub MovimientoIA(ByRef fila As Integer, ByRef columna As Integer)
         Dim numeroAleatorio As New Random()
-        fila = numeroAleatorio.Next(0, numeroDeReinas - 1)
-        columna = numeroAleatorio.Next(0, numeroDeReinas - 1)
-        If Not PosicionEsSegura(fila, columna) Then
-            movimientoIA(fila, columna)
+
+        'Posible bucle infinito si no hay mas posiciones seguras
+        While Not PosicionEsSegura(fila, columna)
+            fila = numeroAleatorio.Next(0, cantidadDeReinas - 1)
+            columna = numeroAleatorio.Next(0, cantidadDeReinas - 1)
+        End While
+
+        solucionActual(columna) = fila
+        filasNoSeguras.Add(fila)
+        columnasNoSeguras.Add(columna)
+        'MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
+        PonerColoresAlTablero(columna, fila)
+    End Sub
+
+    ''' <summary>
+    ''' Evento click del boton que inicia o termina el juego.
+    ''' </summary>
+    Private Sub BtnIniciarJuego_Click(sender As Object, e As EventArgs) Handles BtnIniciarJuego.Click
+        If juegoIniciado Then
+            BtnIniciarJuego.Text = "Iniciar"
+            BtnIniciarJuego.Width = 139
+            juegoIniciado = False
         Else
-            solucionActual(columna) = fila
-            filasNoSeguras.Add(fila)
-            columnasNoSeguras.Add(columna)
-            MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
-            PonerColoresAlTablero(columna, fila)
+            BtnIniciarJuego.Text = "Terminar"
+            BtnIniciarJuego.Width = 155
+            juegoIniciado = True
         End If
+
+        cantidadDeReinas = Convert.ToInt32(NudCantidadReinas.Text)
+
+        ColocarTablero()
+
+        For x = 0 To cantidadDeReinas - 1
+            solucionActual.Add(Nothing)
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' Boton de Cerrar el programa.
+    ''' </summary>
+    Private Sub BtnCerrarApp_Click(sender As Object, e As EventArgs) Handles BtnCerrarApp.Click
+        Application.Exit()
+    End Sub
+
+    ''' <summary>
+    ''' Boton de minimizado.
+    ''' </summary>
+    Private Sub BtnMinimizarApp_Click(sender As Object, e As EventArgs) Handles BtnMinimizarApp.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

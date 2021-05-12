@@ -23,10 +23,10 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Guna2GradientButton1 = New Guna.UI2.WinForms.Guna2GradientButton()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.BtnIniciarJuego = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.PanFichasPJ1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2PictureBox5 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -37,8 +37,8 @@ Partial Class Form1
         Me.NudCantidadReinas = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2ImageButton2 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.BtnCerrarApp = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.BtnMinimizarApp = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Dgv_tablero = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,23 +71,23 @@ Partial Class Form1
         CType(Me.Guna2PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Guna2GradientButton1
+        'BtnIniciarJuego
         '
-        Me.Guna2GradientButton1.AutoRoundedCorners = True
-        Me.Guna2GradientButton1.BorderRadius = 25
-        Me.Guna2GradientButton1.CheckedState.Parent = Me.Guna2GradientButton1
-        Me.Guna2GradientButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2GradientButton1.CustomImages.Parent = Me.Guna2GradientButton1
-        Me.Guna2GradientButton1.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GradientButton1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GradientButton1.HoverState.Parent = Me.Guna2GradientButton1
-        Me.Guna2GradientButton1.Location = New System.Drawing.Point(141, 50)
-        Me.Guna2GradientButton1.Name = "Guna2GradientButton1"
-        Me.Guna2GradientButton1.ShadowDecoration.BorderRadius = 16
-        Me.Guna2GradientButton1.ShadowDecoration.Parent = Me.Guna2GradientButton1
-        Me.Guna2GradientButton1.Size = New System.Drawing.Size(139, 52)
-        Me.Guna2GradientButton1.TabIndex = 6
-        Me.Guna2GradientButton1.Text = "Iniciar"
+        Me.BtnIniciarJuego.AutoRoundedCorners = True
+        Me.BtnIniciarJuego.BorderRadius = 25
+        Me.BtnIniciarJuego.CheckedState.Parent = Me.BtnIniciarJuego
+        Me.BtnIniciarJuego.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIniciarJuego.CustomImages.Parent = Me.BtnIniciarJuego
+        Me.BtnIniciarJuego.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnIniciarJuego.ForeColor = System.Drawing.Color.White
+        Me.BtnIniciarJuego.HoverState.Parent = Me.BtnIniciarJuego
+        Me.BtnIniciarJuego.Location = New System.Drawing.Point(141, 50)
+        Me.BtnIniciarJuego.Name = "BtnIniciarJuego"
+        Me.BtnIniciarJuego.ShadowDecoration.BorderRadius = 16
+        Me.BtnIniciarJuego.ShadowDecoration.Parent = Me.BtnIniciarJuego
+        Me.BtnIniciarJuego.Size = New System.Drawing.Size(139, 52)
+        Me.BtnIniciarJuego.TabIndex = 6
+        Me.BtnIniciarJuego.Text = "Iniciar"
         '
         'PanFichasPJ1
         '
@@ -216,73 +216,73 @@ Partial Class Form1
         Me.Guna2HtmlLabel2.TabIndex = 14
         Me.Guna2HtmlLabel2.Text = "Reinas"
         '
-        'Guna2ImageButton1
+        'BtnCerrarApp
         '
-        Me.Guna2ImageButton1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ImageButton1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton1.CheckedState.Parent = Me.Guna2ImageButton1
-        Me.Guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2ImageButton1.HoverState.ImageSize = New System.Drawing.Size(37, 37)
-        Me.Guna2ImageButton1.HoverState.Parent = Me.Guna2ImageButton1
-        Me.Guna2ImageButton1.Image = Global.ChessQueens.My.Resources.Resources.cancel
-        Me.Guna2ImageButton1.ImageRotate = 0!
-        Me.Guna2ImageButton1.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Guna2ImageButton1.Location = New System.Drawing.Point(1256, -1)
-        Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
-        Me.Guna2ImageButton1.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton1.PressedState.Parent = Me.Guna2ImageButton1
-        Me.Guna2ImageButton1.Size = New System.Drawing.Size(47, 45)
-        Me.Guna2ImageButton1.TabIndex = 15
-        Me.Guna2ImageButton1.UseTransparentBackground = True
+        Me.BtnCerrarApp.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCerrarApp.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnCerrarApp.CheckedState.Parent = Me.BtnCerrarApp
+        Me.BtnCerrarApp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCerrarApp.HoverState.ImageSize = New System.Drawing.Size(37, 37)
+        Me.BtnCerrarApp.HoverState.Parent = Me.BtnCerrarApp
+        Me.BtnCerrarApp.Image = Global.ChessQueens.My.Resources.Resources.cancel
+        Me.BtnCerrarApp.ImageRotate = 0!
+        Me.BtnCerrarApp.ImageSize = New System.Drawing.Size(32, 32)
+        Me.BtnCerrarApp.Location = New System.Drawing.Point(1256, -1)
+        Me.BtnCerrarApp.Name = "BtnCerrarApp"
+        Me.BtnCerrarApp.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnCerrarApp.PressedState.Parent = Me.BtnCerrarApp
+        Me.BtnCerrarApp.Size = New System.Drawing.Size(47, 45)
+        Me.BtnCerrarApp.TabIndex = 15
+        Me.BtnCerrarApp.UseTransparentBackground = True
         '
-        'Guna2ImageButton2
+        'BtnMinimizarApp
         '
-        Me.Guna2ImageButton2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ImageButton2.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton2.CheckedState.Parent = Me.Guna2ImageButton2
-        Me.Guna2ImageButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2ImageButton2.HoverState.ImageSize = New System.Drawing.Size(37, 37)
-        Me.Guna2ImageButton2.HoverState.Parent = Me.Guna2ImageButton2
-        Me.Guna2ImageButton2.Image = Global.ChessQueens.My.Resources.Resources.minimize
-        Me.Guna2ImageButton2.ImageRotate = 0!
-        Me.Guna2ImageButton2.ImageSize = New System.Drawing.Size(32, 32)
-        Me.Guna2ImageButton2.Location = New System.Drawing.Point(1207, -1)
-        Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
-        Me.Guna2ImageButton2.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.Guna2ImageButton2.PressedState.Parent = Me.Guna2ImageButton2
-        Me.Guna2ImageButton2.Size = New System.Drawing.Size(47, 45)
-        Me.Guna2ImageButton2.TabIndex = 16
-        Me.Guna2ImageButton2.UseTransparentBackground = True
+        Me.BtnMinimizarApp.BackColor = System.Drawing.Color.Transparent
+        Me.BtnMinimizarApp.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnMinimizarApp.CheckedState.Parent = Me.BtnMinimizarApp
+        Me.BtnMinimizarApp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMinimizarApp.HoverState.ImageSize = New System.Drawing.Size(37, 37)
+        Me.BtnMinimizarApp.HoverState.Parent = Me.BtnMinimizarApp
+        Me.BtnMinimizarApp.Image = Global.ChessQueens.My.Resources.Resources.minimize
+        Me.BtnMinimizarApp.ImageRotate = 0!
+        Me.BtnMinimizarApp.ImageSize = New System.Drawing.Size(32, 32)
+        Me.BtnMinimizarApp.Location = New System.Drawing.Point(1207, -1)
+        Me.BtnMinimizarApp.Name = "BtnMinimizarApp"
+        Me.BtnMinimizarApp.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnMinimizarApp.PressedState.Parent = Me.BtnMinimizarApp
+        Me.BtnMinimizarApp.Size = New System.Drawing.Size(47, 45)
+        Me.BtnMinimizarApp.TabIndex = 16
+        Me.BtnMinimizarApp.UseTransparentBackground = True
         '
         'Dgv_tablero
         '
         Me.Dgv_tablero.AllowUserToAddRows = False
         Me.Dgv_tablero.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.Dgv_tablero.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.Dgv_tablero.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.Dgv_tablero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.Dgv_tablero.BackgroundColor = System.Drawing.Color.White
         Me.Dgv_tablero.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgv_tablero.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgv_tablero.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_tablero.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_tablero.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.Dgv_tablero.ColumnHeadersHeight = 21
         Me.Dgv_tablero.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle6
         Me.Dgv_tablero.EnableHeadersVisualStyles = False
         Me.Dgv_tablero.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Dgv_tablero.Location = New System.Drawing.Point(249, 138)
@@ -481,14 +481,14 @@ Partial Class Form1
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Dgv_tablero)
-        Me.Controls.Add(Me.Guna2ImageButton2)
+        Me.Controls.Add(Me.BtnMinimizarApp)
         Me.Controls.Add(Me.LbResultados)
-        Me.Controls.Add(Me.Guna2ImageButton1)
+        Me.Controls.Add(Me.BtnCerrarApp)
         Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Controls.Add(Me.NudCantidadReinas)
         Me.Controls.Add(Me.PanFichasPJ1)
-        Me.Controls.Add(Me.Guna2GradientButton1)
+        Me.Controls.Add(Me.BtnIniciarJuego)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(1303, 813)
         Me.MinimumSize = New System.Drawing.Size(1303, 813)
@@ -513,7 +513,7 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Guna2GradientButton1 As Guna.UI2.WinForms.Guna2GradientButton
+    Friend WithEvents BtnIniciarJuego As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents PanFichasPJ1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
     Friend WithEvents Guna2PictureBox5 As Guna.UI2.WinForms.Guna2PictureBox
@@ -522,9 +522,9 @@ Partial Class Form1
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents NudCantidadReinas As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2ImageButton1 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents BtnCerrarApp As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2ImageButton2 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents BtnMinimizarApp As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents Dgv_tablero As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
