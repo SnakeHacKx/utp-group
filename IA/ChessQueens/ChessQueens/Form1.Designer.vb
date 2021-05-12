@@ -27,12 +27,6 @@ Partial Class Form1
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BtnIniciarJuego = New Guna.UI2.WinForms.Guna2GradientButton()
-        Me.PanFichasPJ1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.ImgReina4PJ = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.ImgReina3PJ = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.ImgReina2PJ = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.ImgReina1PJ = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.NudCantidadReinas = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -51,24 +45,9 @@ Partial Class Form1
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.LbResultados = New System.Windows.Forms.ListBox()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.ImgReina4IA = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.ImgReina3IA = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.ImgReina2IA = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.ImgReina1IA = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.PanFichasPJ1.SuspendLayout()
-        CType(Me.ImgReina4PJ, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImgReina3PJ, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImgReina2PJ, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImgReina1PJ, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BtnPosiblesSoluciones = New Guna.UI2.WinForms.Guna2GradientButton()
         CType(Me.NudCantidadReinas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_tablero, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel1.SuspendLayout()
-        CType(Me.ImgReina4IA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImgReina3IA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImgReina2IA, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImgReina1IA, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnIniciarJuego
@@ -88,85 +67,6 @@ Partial Class Form1
         Me.BtnIniciarJuego.Size = New System.Drawing.Size(139, 52)
         Me.BtnIniciarJuego.TabIndex = 6
         Me.BtnIniciarJuego.Text = "Iniciar"
-        '
-        'PanFichasPJ1
-        '
-        Me.PanFichasPJ1.BorderColor = System.Drawing.Color.Black
-        Me.PanFichasPJ1.BorderRadius = 20
-        Me.PanFichasPJ1.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.PanFichasPJ1.Controls.Add(Me.ImgReina4PJ)
-        Me.PanFichasPJ1.Controls.Add(Me.ImgReina3PJ)
-        Me.PanFichasPJ1.Controls.Add(Me.ImgReina2PJ)
-        Me.PanFichasPJ1.Controls.Add(Me.ImgReina1PJ)
-        Me.PanFichasPJ1.FillColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(100, Byte), Integer))
-        Me.PanFichasPJ1.Location = New System.Drawing.Point(12, 141)
-        Me.PanFichasPJ1.Name = "PanFichasPJ1"
-        Me.PanFichasPJ1.ShadowDecoration.Parent = Me.PanFichasPJ1
-        Me.PanFichasPJ1.Size = New System.Drawing.Size(201, 623)
-        Me.PanFichasPJ1.TabIndex = 7
-        '
-        'Guna2HtmlLabel4
-        '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(25, 3)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(132, 41)
-        Me.Guna2HtmlLabel4.TabIndex = 19
-        Me.Guna2HtmlLabel4.Text = "Jugador(a)"
-        '
-        'ImgReina4PJ
-        '
-        Me.ImgReina4PJ.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina4PJ.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina4PJ.Location = New System.Drawing.Point(109, 199)
-        Me.ImgReina4PJ.Name = "ImgReina4PJ"
-        Me.ImgReina4PJ.ShadowDecoration.Parent = Me.ImgReina4PJ
-        Me.ImgReina4PJ.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina4PJ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina4PJ.TabIndex = 3
-        Me.ImgReina4PJ.TabStop = False
-        Me.ImgReina4PJ.UseTransparentBackground = True
-        '
-        'ImgReina3PJ
-        '
-        Me.ImgReina3PJ.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina3PJ.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina3PJ.Location = New System.Drawing.Point(13, 199)
-        Me.ImgReina3PJ.Name = "ImgReina3PJ"
-        Me.ImgReina3PJ.ShadowDecoration.Parent = Me.ImgReina3PJ
-        Me.ImgReina3PJ.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina3PJ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina3PJ.TabIndex = 2
-        Me.ImgReina3PJ.TabStop = False
-        Me.ImgReina3PJ.UseTransparentBackground = True
-        '
-        'ImgReina2PJ
-        '
-        Me.ImgReina2PJ.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina2PJ.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina2PJ.Location = New System.Drawing.Point(109, 58)
-        Me.ImgReina2PJ.Name = "ImgReina2PJ"
-        Me.ImgReina2PJ.ShadowDecoration.Parent = Me.ImgReina2PJ
-        Me.ImgReina2PJ.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina2PJ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina2PJ.TabIndex = 1
-        Me.ImgReina2PJ.TabStop = False
-        Me.ImgReina2PJ.UseTransparentBackground = True
-        '
-        'ImgReina1PJ
-        '
-        Me.ImgReina1PJ.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina1PJ.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina1PJ.Location = New System.Drawing.Point(13, 58)
-        Me.ImgReina1PJ.Name = "ImgReina1PJ"
-        Me.ImgReina1PJ.ShadowDecoration.Parent = Me.ImgReina1PJ
-        Me.ImgReina1PJ.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina1PJ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina1PJ.TabIndex = 0
-        Me.ImgReina1PJ.TabStop = False
-        Me.ImgReina1PJ.UseTransparentBackground = True
         '
         'Guna2BorderlessForm1
         '
@@ -287,13 +187,13 @@ Partial Class Form1
         Me.Dgv_tablero.DefaultCellStyle = DataGridViewCellStyle3
         Me.Dgv_tablero.EnableHeadersVisualStyles = False
         Me.Dgv_tablero.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Dgv_tablero.Location = New System.Drawing.Point(249, 138)
+        Me.Dgv_tablero.Location = New System.Drawing.Point(193, 138)
         Me.Dgv_tablero.Name = "Dgv_tablero"
         Me.Dgv_tablero.ReadOnly = True
         Me.Dgv_tablero.RowHeadersVisible = False
         Me.Dgv_tablero.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.Dgv_tablero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.Dgv_tablero.Size = New System.Drawing.Size(806, 620)
+        Me.Dgv_tablero.Size = New System.Drawing.Size(935, 620)
         Me.Dgv_tablero.TabIndex = 17
         Me.Dgv_tablero.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -380,7 +280,7 @@ Partial Class Form1
         'LbResultados
         '
         Me.LbResultados.FormattingEnabled = True
-        Me.LbResultados.Location = New System.Drawing.Point(982, 21)
+        Me.LbResultados.Location = New System.Drawing.Point(1135, 657)
         Me.LbResultados.Name = "LbResultados"
         Me.LbResultados.Size = New System.Drawing.Size(156, 69)
         Me.LbResultados.TabIndex = 1
@@ -396,84 +296,23 @@ Partial Class Form1
         Me.Guna2HtmlLabel5.TabIndex = 20
         Me.Guna2HtmlLabel5.Text = "IA"
         '
-        'Guna2Panel1
+        'BtnPosiblesSoluciones
         '
-        Me.Guna2Panel1.BorderColor = System.Drawing.Color.Black
-        Me.Guna2Panel1.BorderRadius = 20
-        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.Guna2Panel1.Controls.Add(Me.ImgReina4IA)
-        Me.Guna2Panel1.Controls.Add(Me.ImgReina3IA)
-        Me.Guna2Panel1.Controls.Add(Me.ImgReina2IA)
-        Me.Guna2Panel1.Controls.Add(Me.ImgReina1IA)
-        Me.Guna2Panel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Guna2Panel1.Location = New System.Drawing.Point(1090, 138)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(201, 623)
-        Me.Guna2Panel1.TabIndex = 20
-        '
-        'Guna2HtmlLabel6
-        '
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(32, Byte), Integer))
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(80, 6)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(37, 41)
-        Me.Guna2HtmlLabel6.TabIndex = 19
-        Me.Guna2HtmlLabel6.Text = "IA"
-        '
-        'ImgReina4IA
-        '
-        Me.ImgReina4IA.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina4IA.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina4IA.Location = New System.Drawing.Point(109, 199)
-        Me.ImgReina4IA.Name = "ImgReina4IA"
-        Me.ImgReina4IA.ShadowDecoration.Parent = Me.ImgReina4IA
-        Me.ImgReina4IA.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina4IA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina4IA.TabIndex = 3
-        Me.ImgReina4IA.TabStop = False
-        Me.ImgReina4IA.UseTransparentBackground = True
-        '
-        'ImgReina3IA
-        '
-        Me.ImgReina3IA.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina3IA.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina3IA.Location = New System.Drawing.Point(13, 199)
-        Me.ImgReina3IA.Name = "ImgReina3IA"
-        Me.ImgReina3IA.ShadowDecoration.Parent = Me.ImgReina3IA
-        Me.ImgReina3IA.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina3IA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina3IA.TabIndex = 2
-        Me.ImgReina3IA.TabStop = False
-        Me.ImgReina3IA.UseTransparentBackground = True
-        '
-        'ImgReina2IA
-        '
-        Me.ImgReina2IA.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina2IA.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina2IA.Location = New System.Drawing.Point(109, 58)
-        Me.ImgReina2IA.Name = "ImgReina2IA"
-        Me.ImgReina2IA.ShadowDecoration.Parent = Me.ImgReina2IA
-        Me.ImgReina2IA.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina2IA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina2IA.TabIndex = 1
-        Me.ImgReina2IA.TabStop = False
-        Me.ImgReina2IA.UseTransparentBackground = True
-        '
-        'ImgReina1IA
-        '
-        Me.ImgReina1IA.BackColor = System.Drawing.Color.Transparent
-        Me.ImgReina1IA.Image = Global.ChessQueens.My.Resources.Resources.queen_icon1
-        Me.ImgReina1IA.Location = New System.Drawing.Point(13, 58)
-        Me.ImgReina1IA.Name = "ImgReina1IA"
-        Me.ImgReina1IA.ShadowDecoration.Parent = Me.ImgReina1IA
-        Me.ImgReina1IA.Size = New System.Drawing.Size(73, 126)
-        Me.ImgReina1IA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ImgReina1IA.TabIndex = 0
-        Me.ImgReina1IA.TabStop = False
-        Me.ImgReina1IA.UseTransparentBackground = True
+        Me.BtnPosiblesSoluciones.AutoRoundedCorners = True
+        Me.BtnPosiblesSoluciones.BorderRadius = 40
+        Me.BtnPosiblesSoluciones.CheckedState.Parent = Me.BtnPosiblesSoluciones
+        Me.BtnPosiblesSoluciones.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnPosiblesSoluciones.CustomImages.Parent = Me.BtnPosiblesSoluciones
+        Me.BtnPosiblesSoluciones.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnPosiblesSoluciones.ForeColor = System.Drawing.Color.White
+        Me.BtnPosiblesSoluciones.HoverState.Parent = Me.BtnPosiblesSoluciones
+        Me.BtnPosiblesSoluciones.Location = New System.Drawing.Point(1103, 49)
+        Me.BtnPosiblesSoluciones.Name = "BtnPosiblesSoluciones"
+        Me.BtnPosiblesSoluciones.ShadowDecoration.BorderRadius = 16
+        Me.BtnPosiblesSoluciones.ShadowDecoration.Parent = Me.BtnPosiblesSoluciones
+        Me.BtnPosiblesSoluciones.Size = New System.Drawing.Size(178, 83)
+        Me.BtnPosiblesSoluciones.TabIndex = 21
+        Me.BtnPosiblesSoluciones.Text = "Posibles Soluciones"
         '
         'Form1
         '
@@ -481,7 +320,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.WindowFrame
         Me.ClientSize = New System.Drawing.Size(1303, 788)
-        Me.Controls.Add(Me.Guna2Panel1)
+        Me.Controls.Add(Me.BtnPosiblesSoluciones)
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Dgv_tablero)
         Me.Controls.Add(Me.BtnMinimizarApp)
@@ -490,7 +329,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Controls.Add(Me.NudCantidadReinas)
-        Me.Controls.Add(Me.PanFichasPJ1)
         Me.Controls.Add(Me.BtnIniciarJuego)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(1303, 813)
@@ -498,31 +336,14 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reinas de Ajedrez"
-        Me.PanFichasPJ1.ResumeLayout(False)
-        Me.PanFichasPJ1.PerformLayout()
-        CType(Me.ImgReina4PJ, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImgReina3PJ, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImgReina2PJ, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImgReina1PJ, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NudCantidadReinas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_tablero, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel1.ResumeLayout(False)
-        Me.Guna2Panel1.PerformLayout()
-        CType(Me.ImgReina4IA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImgReina3IA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImgReina2IA, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImgReina1IA, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents BtnIniciarJuego As Guna.UI2.WinForms.Guna2GradientButton
-    Friend WithEvents PanFichasPJ1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
-    Friend WithEvents ImgReina4PJ As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents ImgReina3PJ As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents ImgReina2PJ As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents ImgReina1PJ As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents NudCantidadReinas As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents BtnCerrarApp As Guna.UI2.WinForms.Guna2ImageButton
@@ -538,13 +359,7 @@ Partial Class Form1
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents Column16 As DataGridViewTextBoxColumn
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LbResultados As ListBox
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents ImgReina4IA As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents ImgReina3IA As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents ImgReina2IA As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents ImgReina1IA As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents BtnPosiblesSoluciones As Guna.UI2.WinForms.Guna2GradientButton
 End Class

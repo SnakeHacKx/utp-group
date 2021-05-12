@@ -16,18 +16,14 @@
     'Lista de listas de soluciones encontradas
     Public soluciones As New List(Of List(Of Integer))
 
-    Dim numeroDeTurnoIA As Integer = 0
-    Dim cantidadDeReinasPJ As Integer
-    Dim cantidadDeReinasIA As Integer
-    Dim numeroDeTurnoPJ As Integer = 0
+    Dim reinasPJEnTablero As Integer
+    Dim reinasIAEnTablero As Integer
 
     ''' <summary>
     ''' Evento Load en el que se inicializan los colores del tablero.
     ''' </summary>
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cantidadDeReinas = 8  'Por defecto, inicia con 8 reinas
-        cantidadDeReinasPJ = cantidadDeReinas / 2
-        cantidadDeReinasIA = cantidadDeReinas / 2
         ColocarTablero()
     End Sub
 
@@ -67,29 +63,12 @@
     ''' <param name="fila">Fila actual.</param>
     Public Sub ColocarReina(ByRef fila As Integer, ByRef columna As Integer, ByRef user As Boolean)
         ' Dim temp As New List(Of Integer)
-        If numeroDeTurnoPJ = 0 Then
-            ImgReina4PJ.Visible = False
-        End If
-
-        If numeroDeTurnoPJ = 1 Then
-            ImgReina3PJ.Visible = False
-        End If
-
-        If numeroDeTurnoPJ = 2 Then
-            ImgReina2PJ.Visible = False
-        End If
-
-        If numeroDeTurnoPJ = 3 Then
-            ImgReina1PJ.Visible = False
-        End If
-
-        numeroDeTurnoPJ += 1
 
         If Not PosicionEsSegura(fila, columna) Then
             MsgBox("La reina ha sido devorada")
-            cantidadDeReinasPJ -= 1
             Return
         Else
+            reinasPJEnTablero += 1
             solucionActual(columna) = fila
             filasNoSeguras.Add(fila)
             columnasNoSeguras.Add(columna)
@@ -160,23 +139,6 @@
             ColocarReina(fila, columna, user)
             'MsgBox("ahora viene la IA")
             MovimientoIA(fila, columna, user)
-
-            If numeroDeTurnoIA = 0 Then
-                ImgReina4IA.Visible = False
-            End If
-
-            If numeroDeTurnoIA = 1 Then
-                ImgReina3IA.Visible = False
-            End If
-
-            If numeroDeTurnoIA = 2 Then
-                ImgReina2IA.Visible = False
-            End If
-
-            If numeroDeTurnoIA = 3 Then
-                ImgReina1IA.Visible = False
-            End If
-            numeroDeTurnoIA += 1
         Else
             MsgBox("El juego no ha sido iniciado, favor elija la cantidadd de reinas y haga click en el boton de INICIAR")
         End If
@@ -212,18 +174,19 @@
         'posiciones validas en todo el tablero por lo tanto termina el juego
         If valida Then
             ' valida es true por lo tanto se agrega la posicion a la solucion actual y las filas/columnas no seguras
+            reinasIAEnTablero += 1
             solucionActual(columna) = fila
             filasNoSeguras.Add(fila)
             columnasNoSeguras.Add(columna)
             'MsgBox("Posición (" & fila & ", " & columna & ") SEGURA")
             PonerColoresAlTablero(columna, fila, user) ' user solo es para asignar el color deacuerdo por que metodo entra
         Else
-            If cantidadDeReinasPJ < cantidadDeReinasIA Then
+            If reinasPJEnTablero < reinasIAEnTablero Then
                 MsgBox("Se acabo el juego, no hay mas posiciones validas disponibles" + vbNewLine +
                        "HA GANADO LA IA!")
             End If
 
-            If cantidadDeReinasPJ = cantidadDeReinasIA Then
+            If reinasPJEnTablero = reinasIAEnTablero Then
                 MsgBox("Se acabo el juego, no hay mas posiciones validas disponibles" + vbNewLine +
                        "HA SIDO UN EMPATE!")
             End If
@@ -257,10 +220,8 @@
     End Sub
 
     Private Sub ReiniciarTablero()
-        numeroDeTurnoPJ = 0
-        numeroDeTurnoIA = 0
-        cantidadDeReinasPJ = cantidadDeReinas / 2
-        cantidadDeReinasIA = cantidadDeReinas / 2
+        reinasPJEnTablero = 0
+        reinasIAEnTablero = 0
 
         filasNoSeguras.Clear()
         columnasNoSeguras.Clear()
@@ -270,16 +231,6 @@
         For x = 0 To cantidadDeReinas - 1
             solucionActual.Add(-1)
         Next
-
-        ImgReina1IA.Visible = True
-        ImgReina2IA.Visible = True
-        ImgReina3IA.Visible = True
-        ImgReina4IA.Visible = True
-
-        ImgReina1PJ.Visible = True
-        ImgReina2PJ.Visible = True
-        ImgReina3PJ.Visible = True
-        ImgReina4PJ.Visible = True
     End Sub
 
     ''' <summary>
