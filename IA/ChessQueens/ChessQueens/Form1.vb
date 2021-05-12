@@ -9,12 +9,11 @@
     Public filasNoSeguras As New List(Of Integer)
     'Lista que contendra las columnas no seguras para una reina
     Public columnasNoSeguras As New List(Of Integer)
-    'Lista que contendra las diagonales no seguras para una reina
-    Public diagonalesNoSeguras As New List(Of List(Of Integer))
     'Lista de listas de soluciones encontradas
     Public soluciones As New List(Of List(Of Integer))
-
+    'Cantidad de reinas con las que quedo el jugador en el tablero
     Dim reinasPJEnTablero As Integer
+    'Cantidad de reinas con las que quedo la IA en el tablero
     Dim reinasIAEnTablero As Integer
 
     ''' <summary>
@@ -29,7 +28,7 @@
     ''' Coloca el tablero del tamano que se le indique.
     ''' </summary>
     Private Sub ColocarTablero()
-        ' (SOLO SIRVE 8x8 POR EL MOMENTO)
+        ' (SOLO SIRVE 8x8)
         For i As Integer = 0 To cantidadDeReinas - 1
             Dgv_tablero.Rows.Add()
             Dgv_tablero.Rows(i).HeaderCell.Value = (i + 1).ToString
@@ -168,9 +167,8 @@
                 Exit For
             End If
         Next
-        'End While
-        'si valida llega al final de todas las posiciones sin volverse true quiere decir que no hay
-        'posiciones validas en todo el tablero por lo tanto termina el juego
+        ' Si la variable "valida" llega al final de todas las posiciones sin volverse True, quiere 
+        ' decir que no hay posiciones validas en todo el tablero, por lo tanto termina el juego
         If valida Then
             ' valida es true por lo tanto se agrega la posicion a la solucion actual y las filas/columnas no seguras
             reinasIAEnTablero += 1
@@ -218,6 +216,9 @@
         Next
     End Sub
 
+    ''' <summary>
+    ''' Reinicia el tablero al haber hecho una partida anteriormente.
+    ''' </summary>
     Private Sub ReiniciarTablero()
         reinasPJEnTablero = 0
         reinasIAEnTablero = 0
