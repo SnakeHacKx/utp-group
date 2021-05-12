@@ -123,7 +123,7 @@
     ''' <c>ColocarReina</c> y <c>MovimientoIA</c>
     ''' </remarks>
     Private Sub Dgv_tablero_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_tablero.CellClick
-        Dim cantidadDeVerificaciones As Integer = 0
+        'Dim cantidadDeVerificaciones As Integer = 0
         If juegoIniciado Then
             Dim fila As Integer = Dgv_tablero.CurrentCell.RowIndex
             Dim columna As Integer = Dgv_tablero.CurrentCell.ColumnIndex
