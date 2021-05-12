@@ -1,6 +1,6 @@
 ﻿Public Class NQueens
     'Cantidad de reinas
-    Dim _numeroDeReinas, _numeroDePasos As Integer
+    Dim _numeroDeReinas As Integer
     'Lista que contendra el valor de prueba actual
     Public solucionActual As New List(Of Integer)
     'Lista de listas de soluciones encontradas
@@ -14,14 +14,7 @@
             _numeroDeReinas = value
         End Set
     End Property
-    Property NumeroDePasos As Integer
-        Get
-            Return _numeroDePasos
-        End Get
-        Set(value As Integer)
-            _numeroDePasos = value
-        End Set
-    End Property
+
     ''ALGORITMO BACKTRAKING INICIO
     ''' <summary>
     ''' Metodo que permite saber si una posicion es segura o no.
@@ -57,6 +50,7 @@
     ''' <param name="fila">Fila actual.</param>
     Public Sub ColocarReina(fila As Integer)
         Dim temp As New List(Of Integer)
+
         For columna = 0 To NumeroDeReinas - 1
             If Not PosicionEsSegura(fila, columna) Then
                 Continue For
@@ -79,64 +73,63 @@
         Next
     End Sub
     ''FIN ALGORITMO BACKTRACKING
-
-    ''' <summary>
-    ''' funcion para validar que la posicion seleccionada es valida
-    ''' </summary>
-    ''' <param name="Solucion_Curso"></param>
-    ''' <returns></returns>
-    Function Validar_Posicion(ByRef Solucion_Curso As List(Of Integer)) As Boolean
-        Dim valida As Integer = 0
-        For Each solucion In soluciones
-            For i As Integer = 0 To NumeroDeReinas - 1
-                If (solucion.Item(i) = Solucion_Curso.Item(i)) Then
-                    ''verifica que la posicion seleccionada se encuentra en alguna de las soluciones
-                    valida += 1
-                    MsgBox("valida " & valida.ToString & " " & solucion.Item(i).ToString & " " & Solucion_Curso.Item(i).ToString & " " & NumeroDePasos.ToString)
-                End If
-            Next
-            If (valida = NumeroDePasos) Then
-                Return True
-            Else
-                valida = 0
-            End If
-        Next
-        Return False
-        If valida = 8 Then
-            MsgBox("se acabo el juego")
-        End If
-    End Function
-
-    ''' <summary>
-    ''' 
-    ''' </summary>
-    ''' <param name="Solucion_Curso"></param>
-    ''' <param name="fila"></param>
-    ''' <param name="columna"></param>
-    Sub pasoDeIA(ByRef Solucion_Curso As List(Of Integer), ByRef fila As Integer, ByRef columna As Integer)
-        Dim valida As Integer = 0
-        For Each solucion In soluciones
-            For i As Integer = 0 To NumeroDeReinas - 1
-                If (solucion.Item(i) = Solucion_Curso.Item(i)) Then
-                    valida += 1
-
-                End If
-            Next
-            If (valida = NumeroDePasos) Then
-                For i As Integer = 0 To NumeroDePasos
-                    If (Solucion_Curso.Item(i) = -1) Then
-                        Solucion_Curso.Item(i) = solucion.Item(i)
-                        ''verifica que la posicion seleccionada se encuentra en alguna de las soluciones
-                        columna = i
-                        fila = Solucion_Curso.Item(i)
-                        MsgBox("valida " & valida.ToString & " " & solucion.Item(i).ToString & " " & Solucion_Curso.Item(i).ToString & " " & NumeroDePasos.ToString)
-                    End If
-                Next
-            Else
-                valida = 0
-            End If
-        Next
-
-    End Sub
-
 End Class
+
+'''' <summary>
+'''' funcion para validar que la posicion seleccionada es valida
+'''' </summary>
+'''' <param name="Solucion_Curso"></param>
+'''' <returns></returns>
+'Function Validar_Posicion(ByRef Solucion_Curso As List(Of Integer)) As Boolean
+'    Dim valida As Integer = 0
+'    For Each solucion In soluciones
+'        For i As Integer = 0 To NumeroDeReinas - 1
+'            If (solucion.Item(i) = Solucion_Curso.Item(i)) Then
+'                ''verifica que la posicion seleccionada se encuentra en alguna de las soluciones
+'                valida += 1
+'                MsgBox("valida " & valida.ToString & " " & solucion.Item(i).ToString & " " & Solucion_Curso.Item(i).ToString & " " & NumeroDePasos.ToString)
+'            End If
+'        Next
+'        If (valida = NumeroDePasos) Then
+'            Return True
+'        Else
+'            valida = 0
+'        End If
+'    Next
+'    Return False
+'    If valida = 8 Then
+'        MsgBox("se acabo el juego")
+'    End If
+'End Function
+
+'''' <summary>
+'''' 
+'''' </summary>
+'''' <param name="Solucion_Curso"></param>
+'''' <param name="fila"></param>
+'''' <param name="columna"></param>
+'Sub pasoDeIA(ByRef Solucion_Curso As List(Of Integer), ByRef fila As Integer, ByRef columna As Integer)
+'    Dim valida As Integer = 0
+'    For Each solucion In soluciones
+'        For i As Integer = 0 To NumeroDeReinas - 1
+'            If (solucion.Item(i) = Solucion_Curso.Item(i)) Then
+'                valida += 1
+
+'            End If
+'        Next
+'        If (valida = NumeroDePasos) Then
+'            For i As Integer = 0 To NumeroDePasos
+'                If (Solucion_Curso.Item(i) = -1) Then
+'                    Solucion_Curso.Item(i) = solucion.Item(i)
+'                    ''verifica que la posicion seleccionada se encuentra en alguna de las soluciones
+'                    columna = i
+'                    fila = Solucion_Curso.Item(i)
+'                    MsgBox("valida " & valida.ToString & " " & solucion.Item(i).ToString & " " & Solucion_Curso.Item(i).ToString & " " & NumeroDePasos.ToString)
+'                End If
+'            Next
+'        Else
+'            valida = 0
+'        End If
+'    Next
+
+'End Sub

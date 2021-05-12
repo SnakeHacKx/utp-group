@@ -31,8 +31,6 @@ Partial Class Form1
         Me.NudCantidadReinas = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.BtnCerrarApp = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.BtnMinimizarApp = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Dgv_tablero = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,9 +41,10 @@ Partial Class Form1
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.LbResultados = New System.Windows.Forms.ListBox()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.BtnPosiblesSoluciones = New Guna.UI2.WinForms.Guna2GradientButton()
+        Me.BtnMinimizarApp = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.BtnCerrarApp = New Guna.UI2.WinForms.Guna2ImageButton()
         CType(Me.NudCantidadReinas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_tablero, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -65,7 +64,7 @@ Partial Class Form1
         Me.BtnIniciarJuego.ShadowDecoration.BorderRadius = 16
         Me.BtnIniciarJuego.ShadowDecoration.Parent = Me.BtnIniciarJuego
         Me.BtnIniciarJuego.Size = New System.Drawing.Size(139, 52)
-        Me.BtnIniciarJuego.TabIndex = 6
+        Me.BtnIniciarJuego.TabIndex = 1
         Me.BtnIniciarJuego.Text = "Iniciar"
         '
         'Guna2BorderlessForm1
@@ -91,7 +90,7 @@ Partial Class Form1
         Me.NudCantidadReinas.Name = "NudCantidadReinas"
         Me.NudCantidadReinas.ShadowDecoration.Parent = Me.NudCantidadReinas
         Me.NudCantidadReinas.Size = New System.Drawing.Size(58, 36)
-        Me.NudCantidadReinas.TabIndex = 11
+        Me.NudCantidadReinas.TabIndex = 0
         Me.NudCantidadReinas.Value = New Decimal(New Integer() {8, 0, 0, 0})
         '
         'Guna2HtmlLabel1
@@ -115,44 +114,6 @@ Partial Class Form1
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(50, 23)
         Me.Guna2HtmlLabel2.TabIndex = 14
         Me.Guna2HtmlLabel2.Text = "Reinas"
-        '
-        'BtnCerrarApp
-        '
-        Me.BtnCerrarApp.BackColor = System.Drawing.Color.Transparent
-        Me.BtnCerrarApp.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.BtnCerrarApp.CheckedState.Parent = Me.BtnCerrarApp
-        Me.BtnCerrarApp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCerrarApp.HoverState.ImageSize = New System.Drawing.Size(37, 37)
-        Me.BtnCerrarApp.HoverState.Parent = Me.BtnCerrarApp
-        Me.BtnCerrarApp.Image = Global.ChessQueens.My.Resources.Resources.cancel
-        Me.BtnCerrarApp.ImageRotate = 0!
-        Me.BtnCerrarApp.ImageSize = New System.Drawing.Size(32, 32)
-        Me.BtnCerrarApp.Location = New System.Drawing.Point(1256, -1)
-        Me.BtnCerrarApp.Name = "BtnCerrarApp"
-        Me.BtnCerrarApp.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.BtnCerrarApp.PressedState.Parent = Me.BtnCerrarApp
-        Me.BtnCerrarApp.Size = New System.Drawing.Size(47, 45)
-        Me.BtnCerrarApp.TabIndex = 15
-        Me.BtnCerrarApp.UseTransparentBackground = True
-        '
-        'BtnMinimizarApp
-        '
-        Me.BtnMinimizarApp.BackColor = System.Drawing.Color.Transparent
-        Me.BtnMinimizarApp.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.BtnMinimizarApp.CheckedState.Parent = Me.BtnMinimizarApp
-        Me.BtnMinimizarApp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnMinimizarApp.HoverState.ImageSize = New System.Drawing.Size(37, 37)
-        Me.BtnMinimizarApp.HoverState.Parent = Me.BtnMinimizarApp
-        Me.BtnMinimizarApp.Image = Global.ChessQueens.My.Resources.Resources.minimize
-        Me.BtnMinimizarApp.ImageRotate = 0!
-        Me.BtnMinimizarApp.ImageSize = New System.Drawing.Size(32, 32)
-        Me.BtnMinimizarApp.Location = New System.Drawing.Point(1207, -1)
-        Me.BtnMinimizarApp.Name = "BtnMinimizarApp"
-        Me.BtnMinimizarApp.PressedState.ImageSize = New System.Drawing.Size(64, 64)
-        Me.BtnMinimizarApp.PressedState.Parent = Me.BtnMinimizarApp
-        Me.BtnMinimizarApp.Size = New System.Drawing.Size(47, 45)
-        Me.BtnMinimizarApp.TabIndex = 16
-        Me.BtnMinimizarApp.UseTransparentBackground = True
         '
         'Dgv_tablero
         '
@@ -194,7 +155,7 @@ Partial Class Form1
         Me.Dgv_tablero.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.Dgv_tablero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.Dgv_tablero.Size = New System.Drawing.Size(935, 620)
-        Me.Dgv_tablero.TabIndex = 17
+        Me.Dgv_tablero.TabIndex = 2
         Me.Dgv_tablero.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.Dgv_tablero.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -277,14 +238,6 @@ Partial Class Form1
         Me.Guna2HtmlLabel3.TabIndex = 18
         Me.Guna2HtmlLabel3.Text = "El Juego de Las N Reinas"
         '
-        'LbResultados
-        '
-        Me.LbResultados.FormattingEnabled = True
-        Me.LbResultados.Location = New System.Drawing.Point(1135, 657)
-        Me.LbResultados.Name = "LbResultados"
-        Me.LbResultados.Size = New System.Drawing.Size(156, 69)
-        Me.LbResultados.TabIndex = 1
-        '
         'Guna2HtmlLabel5
         '
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
@@ -299,20 +252,58 @@ Partial Class Form1
         'BtnPosiblesSoluciones
         '
         Me.BtnPosiblesSoluciones.AutoRoundedCorners = True
-        Me.BtnPosiblesSoluciones.BorderRadius = 40
+        Me.BtnPosiblesSoluciones.BorderRadius = 33
         Me.BtnPosiblesSoluciones.CheckedState.Parent = Me.BtnPosiblesSoluciones
         Me.BtnPosiblesSoluciones.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnPosiblesSoluciones.CustomImages.Parent = Me.BtnPosiblesSoluciones
-        Me.BtnPosiblesSoluciones.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnPosiblesSoluciones.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPosiblesSoluciones.ForeColor = System.Drawing.Color.White
         Me.BtnPosiblesSoluciones.HoverState.Parent = Me.BtnPosiblesSoluciones
-        Me.BtnPosiblesSoluciones.Location = New System.Drawing.Point(1103, 49)
+        Me.BtnPosiblesSoluciones.Location = New System.Drawing.Point(1134, 690)
         Me.BtnPosiblesSoluciones.Name = "BtnPosiblesSoluciones"
         Me.BtnPosiblesSoluciones.ShadowDecoration.BorderRadius = 16
         Me.BtnPosiblesSoluciones.ShadowDecoration.Parent = Me.BtnPosiblesSoluciones
-        Me.BtnPosiblesSoluciones.Size = New System.Drawing.Size(178, 83)
-        Me.BtnPosiblesSoluciones.TabIndex = 21
+        Me.BtnPosiblesSoluciones.Size = New System.Drawing.Size(163, 68)
+        Me.BtnPosiblesSoluciones.TabIndex = 3
         Me.BtnPosiblesSoluciones.Text = "Posibles Soluciones"
+        '
+        'BtnMinimizarApp
+        '
+        Me.BtnMinimizarApp.BackColor = System.Drawing.Color.Transparent
+        Me.BtnMinimizarApp.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnMinimizarApp.CheckedState.Parent = Me.BtnMinimizarApp
+        Me.BtnMinimizarApp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMinimizarApp.HoverState.ImageSize = New System.Drawing.Size(37, 37)
+        Me.BtnMinimizarApp.HoverState.Parent = Me.BtnMinimizarApp
+        Me.BtnMinimizarApp.Image = Global.ChessQueens.My.Resources.Resources.minimize
+        Me.BtnMinimizarApp.ImageRotate = 0!
+        Me.BtnMinimizarApp.ImageSize = New System.Drawing.Size(32, 32)
+        Me.BtnMinimizarApp.Location = New System.Drawing.Point(1207, -1)
+        Me.BtnMinimizarApp.Name = "BtnMinimizarApp"
+        Me.BtnMinimizarApp.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnMinimizarApp.PressedState.Parent = Me.BtnMinimizarApp
+        Me.BtnMinimizarApp.Size = New System.Drawing.Size(47, 45)
+        Me.BtnMinimizarApp.TabIndex = 4
+        Me.BtnMinimizarApp.UseTransparentBackground = True
+        '
+        'BtnCerrarApp
+        '
+        Me.BtnCerrarApp.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCerrarApp.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnCerrarApp.CheckedState.Parent = Me.BtnCerrarApp
+        Me.BtnCerrarApp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCerrarApp.HoverState.ImageSize = New System.Drawing.Size(37, 37)
+        Me.BtnCerrarApp.HoverState.Parent = Me.BtnCerrarApp
+        Me.BtnCerrarApp.Image = Global.ChessQueens.My.Resources.Resources.cancel
+        Me.BtnCerrarApp.ImageRotate = 0!
+        Me.BtnCerrarApp.ImageSize = New System.Drawing.Size(32, 32)
+        Me.BtnCerrarApp.Location = New System.Drawing.Point(1256, -1)
+        Me.BtnCerrarApp.Name = "BtnCerrarApp"
+        Me.BtnCerrarApp.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.BtnCerrarApp.PressedState.Parent = Me.BtnCerrarApp
+        Me.BtnCerrarApp.Size = New System.Drawing.Size(47, 45)
+        Me.BtnCerrarApp.TabIndex = 5
+        Me.BtnCerrarApp.UseTransparentBackground = True
         '
         'Form1
         '
@@ -324,7 +315,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Guna2HtmlLabel3)
         Me.Controls.Add(Me.Dgv_tablero)
         Me.Controls.Add(Me.BtnMinimizarApp)
-        Me.Controls.Add(Me.LbResultados)
         Me.Controls.Add(Me.BtnCerrarApp)
         Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Controls.Add(Me.Guna2HtmlLabel1)
@@ -359,7 +349,6 @@ Partial Class Form1
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents Column16 As DataGridViewTextBoxColumn
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents LbResultados As ListBox
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents BtnPosiblesSoluciones As Guna.UI2.WinForms.Guna2GradientButton
 End Class

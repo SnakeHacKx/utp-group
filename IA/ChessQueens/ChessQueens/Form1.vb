@@ -1,6 +1,4 @@
 ﻿Public Class Form1
-    'Objeto de la clase NQueens
-    Dim queens As New NQueens
     'Variable de control que me permite saber si el juego ha sido iniciado o no
     Dim juegoIniciado As Boolean = False
     'Cantidad de reinas
@@ -120,7 +118,6 @@
         Else
             Dgv_tablero.Item(filaActual, columnaActual).Style.BackColor = Color.Green
         End If
-
     End Sub
 
     ''' <summary>
@@ -247,5 +244,10 @@
     ''' </summary>
     Private Sub BtnMinimizarApp_Click(sender As Object, e As EventArgs) Handles BtnMinimizarApp.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub BtnPosiblesSoluciones_Click(sender As Object, e As EventArgs) Handles BtnPosiblesSoluciones.Click
+        Dim form2 As New Form2
+        form2.Show()
     End Sub
 End Class
