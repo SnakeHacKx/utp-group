@@ -154,8 +154,8 @@
         Dim valida As Boolean = False
         For i As Integer = 0 To 150 'for para recorrer todas las posiciones del tablero
             For j As Integer = 0 To cantidadDeReinas - 1
-                fila = numeroAleatorio.Next(0, 7)
-                columna = numeroAleatorio.Next(0, 7)
+                fila = numeroAleatorio.Next(0, cantidadDeReinas - 1)
+                columna = numeroAleatorio.Next(0, cantidadDeReinas - 1)
                 valida = PosicionEsSegura(fila, columna)
                 If valida Then ' si es segura la posicion se le asignan los valores a fila y columna para que se agreguen a las listas correspondientes
                     'fila = i
